@@ -11,7 +11,7 @@
   <!-- CSS du portfolio principal -->
   <link rel="stylesheet" href="../style.css">
 
-  <!-- Styles propres à cette page -->
+  <!-- Styles propres à la page Power BI -->
   <style>
     .bi-intro {
       padding: 90px 0 65px;
@@ -50,13 +50,18 @@
       margin-bottom: 15px;
     }
 
+    .bi-project h4 {
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
     .bi-project p {
       color: var(--text);
       font-size: 15px;
       margin-bottom: 20px;
     }
 
-    /* Vidéo Power BI plus petite et centrée */
+    /* Vidéo du projet 01 */
     .bi-video {
       display: block;
       width: 75%;
@@ -67,6 +72,150 @@
       border-radius: 12px;
     }
 
+    /* Schéma du projet 01 */
+    .bi-schema-image {
+      display: block;
+      width: 75%;
+      max-width: 750px;
+      height: auto;
+      margin: 25px auto;
+      border-radius: 12px;
+      border: 1px solid #e7eaf0;
+    }
+
+    /* Carrousel du projet 02 */
+    .schema-carousel {
+      position: relative;
+      width: 75%;
+      max-width: 750px;
+      margin: 30px auto;
+      text-align: center;
+      min-width: 0;
+    }
+
+    .schema-viewport {
+      width: 100%;
+      overflow: hidden;
+      touch-action: pan-y;
+      cursor: grab;
+    }
+
+    .schema-viewport:active {
+      cursor: grabbing;
+    }
+
+    .schema-track {
+      display: flex;
+      width: 100%;
+      transition: transform 0.4s ease;
+    }
+
+    .schema-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+      user-select: none;
+    }
+
+    .schema-slide h4 {
+      font-size: 19px;
+      margin: 0 0 18px;
+    }
+
+    .schema-image-area {
+      width: 100%;
+      height: 450px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      box-sizing: border-box;
+    }
+
+    .schema-image-area a {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .schema-image-area img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    /* Flèches sur les côtés */
+    .schema-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      padding: 0;
+      border: 1px solid #dbe4f0;
+      border-radius: 50%;
+      background: white;
+      color: #0755bb;
+      font-size: 21px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .schema-prev {
+      left: -19px;
+    }
+
+    .schema-next {
+      right: -19px;
+    }
+
+    .schema-arrow:hover {
+      background: #0755bb;
+      color: white;
+    }
+
+    /* Points sous le carrousel */
+    .schema-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .schema-dots button {
+      width: 9px;
+      height: 9px;
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+      background: #cbd5e1;
+      cursor: pointer;
+    }
+
+    .schema-dots button.active {
+      background: #0755bb;
+    }
+
+    .schema-hint {
+      margin-top: 12px;
+      font-size: 13px !important;
+      text-align: center;
+    }
+
+    /* Projet 03 */
     .bi-placeholder {
       padding: 45px 20px;
       margin-top: 25px;
@@ -83,6 +232,7 @@
       margin-top: 45px;
     }
 
+    /* Adaptation aux téléphones */
     @media (max-width: 600px) {
       .bi-intro {
         padding: 65px 0 45px;
@@ -96,126 +246,28 @@
         font-size: 20px;
       }
 
-      .bi-video {
+      .bi-video,
+      .bi-schema-image,
+      .schema-carousel {
         width: 100%;
       }
-  
-/* Carrousel des schémas Power BI */
-.schema-carousel {
-  position: relative;
-  width: 75%;
-  max-width: 750px;
-  margin: 30px auto;
-  text-align: center;
-}
 
-.schema-viewport {
-  overflow: hidden;
-  border-radius: 12px;
-  touch-action: pan-y;
-  cursor: grab;
-}
+      .schema-image-area {
+        height: 330px;
+      }
 
-.schema-viewport:active {
-  cursor: grabbing;
-}
+      .schema-slide h4 {
+        font-size: 16px;
+      }
 
-.schema-track {
-  display: flex;
-  transition: transform 0.4s ease;
-}
+      .schema-prev {
+        left: 4px;
+      }
 
-.schema-slide {
-  flex: 0 0 100%;
-  min-width: 0;
-  user-select: none;
-}
-
-.schema-slide h4 {
-  font-size: 19px;
-  margin-bottom: 18px;
-}
-
-.schema-slide img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  pointer-events: auto;
-}
-
-.schema-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  width: 36px;
-  height: 36px;
-  border: 1px solid #dbe4f0;
-  border-radius: 50%;
-  background: white;
-  color: #0755bb;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.schema-prev {
-  left: -18px;
-}
-
-.schema-next {
-  right: -18px;
-}
-
-.schema-arrow:hover {
-  background: #0755bb;
-  color: white;
-}
-
-.schema-dots {
-  display: flex;
-  justify-content: center;
-  gap: 9px;
-  margin-top: 18px;
-}
-
-.schema-dots button {
-  width: 9px;
-  height: 9px;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  background: #cbd5e1;
-  cursor: pointer;
-}
-
-.schema-dots button.active {
-  background: #0755bb;
-}
-
-.schema-hint {
-  margin-top: 12px;
-  font-size: 13px !important;
-  text-align: center;
-}
-
-@media (max-width: 600px) {
-  .schema-carousel {
-    width: 100%;
-  }
-
-  .schema-prev {
-    left: 4px;
-  }
-
-  .schema-next {
-    right: 4px;
-  }
-}
-
-
+      .schema-next {
+        right: 4px;
+      }
+    }
   </style>
 </head>
 
@@ -289,10 +341,11 @@
           <span>Data Visualisation</span>
           <span>Analyse de données</span>
         </div>
-        <h4 style="font-size: 20px; margin-top: 35px; margin-bottom: 12px;">
+
+        <h4 style="margin-top: 35px;">
           Visualisation des données — Tableau de bord interactif
         </h4>
-        <!-- Vidéo animée du tableau de bord -->
+
         <video
           class="bi-video"
           autoplay
@@ -306,113 +359,177 @@
           Votre navigateur ne prend pas en charge la vidéo.
         </video>
 
-<!-- Schéma en étoile du projet jeux vidéo -->
-<div style="margin-top: 40px;">
+        <div style="margin-top: 40px;">
 
-  <h4 style="font-size: 20px; margin-bottom: 12px;">
-    Modélisation des données — Schéma en étoile
-  </h4>
+          <h4>
+            Modélisation des données — Schéma en étoile
+          </h4>
 
-  <p>
-    Conception d'un modèle de données en étoile composé
-    d'une table de faits (Fact) et de trois tables de
-    dimensions (DimProduit, DimTemps et DimLieu).
-    Cette structure facilite l'analyse des ventes
-    de jeux vidéo dans Power BI.
-  </p>
+          <p>
+            Conception d'un modèle de données en étoile composé
+            d'une table de faits (Fact) et de trois tables de
+            dimensions (DimProduit, DimTemps et DimLieu).
+            Cette structure facilite l'analyse des ventes
+            de jeux vidéo dans Power BI.
+          </p>
 
-  <a href="schema-jeux-video.PNG" target="_blank">
-    <img
-  src="schema-jeux-video.PNG"
-  alt="Schéma en étoile du projet Power BI sur les ventes de jeux vidéo"
-  style="display: block; width: 75%; max-width: 750px; height: auto; margin: 25px auto; border-radius: 12px; border: 1px solid #e7eaf0;"
->
-  </a>
+          <a href="schema-jeux-video.PNG"
+             target="_blank"
+             rel="noopener noreferrer">
+            <img
+              src="schema-jeux-video.PNG"
+              alt="Schéma en étoile du projet Power BI sur les ventes de jeux vidéo"
+              class="bi-schema-image">
+          </a>
 
-  <p style="text-align: center; font-size: 13px;">
-    Cliquez sur le schéma pour l'agrandir.
-  </p>
+          <p style="text-align: center; font-size: 13px;">
+            Cliquez sur le schéma pour l'agrandir.
+          </p>
 
-</div>
+        </div>
 
       </article>
 
       <!-- PROJET 2 -->
       <article class="bi-project">
-        
-<h3>Modélisation des données — Évolution du modèle</h3>
 
-<p>
-Lors de mon stage, j'ai étudié plusieurs architectures de modèles
-en étoile pour analyser des données d'achats internationaux.
-La principale difficulté était de gérer différentes devises
-et des taux de change révisés chaque mois.
-</p>
+        <h3>02 — Stage en Business Intelligence : modélisation des données</h3>
 
-<!-- Carrousel des trois modèles -->
-<div class="schema-carousel">
+        <p>
+          Lors de mon stage, j'ai étudié plusieurs architectures
+          de modèles en étoile pour analyser des données
+          d'achats internationaux.
+        </p>
 
-  <button class="schema-arrow schema-prev"
-          type="button"
-          aria-label="Modèle précédent">
-    &#10094;
-  </button>
+        <h4>Problématique — Gestion des taux de change</h4>
 
-  <div class="schema-viewport">
-    <div class="schema-track">
+        <p>
+          Les achats étant réalisés dans plusieurs pays,
+          les montants pouvaient être exprimés dans différentes
+          devises. La principale difficulté était d'intégrer
+          des taux de change révisés chaque mois, tout en
+          conservant une structure de données adaptée à
+          l'analyse dans Power BI.
+        </p>
 
-      <div class="schema-slide">
-        <h4>Modèle 1 — Première approche</h4>
-        <a href="modele-1.jpg" target="_blank">
-          <img src="modele-1.jpg" alt="Premier modèle en étoile">
-        </a>
-      </div>
+        <!-- CARROUSEL DES TROIS MODÈLES -->
+        <div class="schema-carousel">
 
-      <div class="schema-slide">
-        <h4>Modèle 2 — Modèle intermédiaire</h4>
-        <a href="modele-2.jpg" target="_blank">
-          <img src="modele-2.jpg" alt="Deuxième modèle en étoile">
-        </a>
-      </div>
+          <button
+            class="schema-arrow schema-prev"
+            type="button"
+            aria-label="Modèle précédent">
+            &#10094;
+          </button>
 
-      <div class="schema-slide">
-        <h4>Modèle 3 — Modèle final retenu</h4>
-        <a href="modele-3.jpg" target="_blank">
-          <img src="modele-3.jpg" alt="Modèle final implémenté">
-        </a>
-      </div>
+          <div class="schema-viewport">
+            <div class="schema-track">
 
-    </div>
-  </div>
+              <!-- MODÈLE 1 -->
+              <div class="schema-slide">
 
-  <button class="schema-arrow schema-next"
-          type="button"
-          aria-label="Modèle suivant">
-    &#10095;
-  </button>
+                <h4>Modèle 1 — Première approche</h4>
 
-  <div class="schema-dots">
-    <button class="active" type="button" aria-label="Modèle 1"></button>
-    <button type="button" aria-label="Modèle 2"></button>
-    <button type="button" aria-label="Modèle 3"></button>
-  </div>
+                <div class="schema-image-area">
+                  <a href="modele-1.jpg"
+                     target="_blank"
+                     rel="noopener noreferrer">
+                    <img
+                      src="modele-1.jpg"
+                      alt="Premier modèle en étoile"
+                      draggable="false">
+                  </a>
+                </div>
 
-  <p class="schema-hint">
-    Faites glisser pour changer de modèle.
-    Cliquez sur l'image pour l'agrandir.
-  </p>
+              </div>
 
-</div>
+              <!-- MODÈLE 2 -->
+              <div class="schema-slide">
 
+                <h4>Modèle 2 — Modèle intermédiaire</h4>
 
-<p>
-Après avoir comparé plusieurs approches, j'ai retenu et implémenté
-une architecture distinguant la dimension des devises
-(DimCurrency) et la table des taux de change (Fact_ExchangeRate).
-Ce modèle utilise également une dimension de dates commune
-pour représenter plusieurs dates métier.
-</p>
+                <div class="schema-image-area">
+                  <a href="modele-2.jpg"
+                     target="_blank"
+                     rel="noopener noreferrer">
+                    <img
+                      src="modele-2.jpg"
+                      alt="Deuxième modèle en étoile"
+                      draggable="false">
+                  </a>
+                </div>
 
+              </div>
+
+              <!-- MODÈLE 3 -->
+              <div class="schema-slide">
+
+                <h4>Modèle 3 — Modèle final retenu</h4>
+
+                <div class="schema-image-area">
+                  <a href="modele-3.jpg"
+                     target="_blank"
+                     rel="noopener noreferrer">
+                    <img
+                      src="modele-3.jpg"
+                      alt="Modèle final implémenté"
+                      draggable="false">
+                  </a>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <button
+            class="schema-arrow schema-next"
+            type="button"
+            aria-label="Modèle suivant">
+            &#10095;
+          </button>
+
+          <div class="schema-dots">
+            <button class="active" type="button"
+                    aria-label="Afficher le modèle 1"></button>
+            <button type="button"
+                    aria-label="Afficher le modèle 2"></button>
+            <button type="button"
+                    aria-label="Afficher le modèle 3"></button>
+          </div>
+
+          <p class="schema-hint">
+            Faites glisser pour changer de modèle.
+            Cliquez sur l'image pour l'agrandir.
+          </p>
+
+        </div>
+
+        <h4>Évolution de la modélisation</h4>
+
+        <p>
+          La première approche intégrait directement le taux
+          de change dans la dimension des devises.
+          La deuxième introduisait une table distincte
+          pour gérer les taux de change.
+        </p>
+
+        <p>
+          Après comparaison des différentes approches,
+          j'ai retenu et implémenté un troisième modèle
+          distinguant la dimension des devises (DimCurrency)
+          et la table des taux de change (Fact_ExchangeRate).
+          Cette architecture utilise également une dimension
+          de dates commune pour représenter plusieurs
+          dates métier.
+        </p>
+
+        <div class="tags">
+          <span>Power BI</span>
+          <span>Business Intelligence</span>
+          <span>Modélisation en étoile</span>
+          <span>Taux de change</span>
+        </div>
 
       </article>
 
@@ -456,120 +573,90 @@ pour représenter plusieurs dates métier.
     </div>
   </footer>
 
-/* Carrousel des schémas Power BI */
-.schema-carousel {
-  position: relative;
-  width: 75%;
-  max-width: 750px;
-  margin: 30px auto;
-  text-align: center;
-}
+  <!-- FONCTIONNEMENT DU CARROUSEL -->
+  <script>
+    const carousel = document.querySelector(".schema-carousel");
+    const viewport = carousel.querySelector(".schema-viewport");
+    const track = carousel.querySelector(".schema-track");
+    const slides = carousel.querySelectorAll(".schema-slide");
+    const dots = carousel.querySelectorAll(".schema-dots button");
 
-.schema-viewport {
-  overflow: hidden;
-  border-radius: 12px;
-  touch-action: pan-y;
-  cursor: grab;
-}
+    let currentSlide = 0;
+    let startX = 0;
+    let dragging = false;
+    let moved = false;
 
-.schema-viewport:active {
-  cursor: grabbing;
-}
+    function showSlide(index) {
+      currentSlide = (index + slides.length) % slides.length;
 
-.schema-track {
-  display: flex;
-  transition: transform 0.4s ease;
-}
+      track.style.transform =
+        "translateX(-" + (currentSlide * 100) + "%)";
 
-.schema-slide {
-  flex: 0 0 100%;
-  min-width: 0;
-  user-select: none;
-}
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === currentSlide);
+      });
+    }
 
-.schema-slide h4 {
-  font-size: 19px;
-  margin-bottom: 18px;
-}
+    carousel.querySelector(".schema-prev")
+      .addEventListener("click", () => {
+        showSlide(currentSlide - 1);
+      });
 
-.schema-slide img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  pointer-events: auto;
-}
+    carousel.querySelector(".schema-next")
+      .addEventListener("click", () => {
+        showSlide(currentSlide + 1);
+      });
 
-.schema-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  width: 36px;
-  height: 36px;
-  border: 1px solid #dbe4f0;
-  border-radius: 50%;
-  background: white;
-  color: #0755bb;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => showSlide(i));
+    });
 
-.schema-prev {
-  left: -18px;
-}
+    viewport.addEventListener("pointerdown", (event) => {
+      if (event.button !== 0) return;
 
-.schema-next {
-  right: -18px;
-}
+      startX = event.clientX;
+      dragging = true;
+      moved = false;
+    });
 
-.schema-arrow:hover {
-  background: #0755bb;
-  color: white;
-}
+    viewport.addEventListener("pointermove", (event) => {
+      if (!dragging) return;
 
-.schema-dots {
-  display: flex;
-  justify-content: center;
-  gap: 9px;
-  margin-top: 18px;
-}
+      if (Math.abs(event.clientX - startX) > 10) {
+        moved = true;
+      }
+    });
 
-.schema-dots button {
-  width: 9px;
-  height: 9px;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  background: #cbd5e1;
-  cursor: pointer;
-}
+    viewport.addEventListener("pointerup", (event) => {
+      if (!dragging) return;
 
-.schema-dots button.active {
-  background: #0755bb;
-}
+      const distance = event.clientX - startX;
+      dragging = false;
 
-.schema-hint {
-  margin-top: 12px;
-  font-size: 13px !important;
-  text-align: center;
-}
+      if (Math.abs(distance) > 50) {
+        showSlide(currentSlide + (distance < 0 ? 1 : -1));
+      }
+    });
 
-@media (max-width: 600px) {
-  .schema-carousel {
-    width: 100%;
-  }
+    viewport.addEventListener("pointercancel", () => {
+      dragging = false;
+    });
 
-  .schema-prev {
-    left: 4px;
-  }
+    viewport.addEventListener("dragstart", (event) => {
+      event.preventDefault();
+    });
 
-  .schema-next {
-    right: 4px;
-  }
-}
+    viewport.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        if (moved) {
+          event.preventDefault();
+          moved = false;
+        }
+      });
+    });
+
+    showSlide(0);
+  </script>
 
 </body>
 </html>
