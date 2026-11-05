@@ -56,13 +56,15 @@
       margin-bottom: 20px;
     }
 
-    .bi-project img {
+    /* Vidéo Power BI plus petite et centrée */
+    .bi-video {
       display: block;
-      width: 100%;
+      width: 75%;
+      max-width: 750px;
       height: auto;
+      margin: 25px auto;
       border: 1px solid var(--border);
       border-radius: 12px;
-      margin-top: 25px;
     }
 
     .bi-placeholder {
@@ -92,6 +94,10 @@
 
       .bi-project h3 {
         font-size: 20px;
+      }
+
+      .bi-video {
+        width: 100%;
       }
     }
   </style>
@@ -168,10 +174,19 @@
           <span>Analyse de données</span>
         </div>
 
-        <img
-          src="dashboard-powerbi.gif"
-          alt="Tableau de bord Power BI sur les ventes de jeux vidéo"
+        <!-- Vidéo animée du tableau de bord -->
+        <video
+          class="bi-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          aria-label="Animation du tableau de bord Power BI sur les ventes de jeux vidéo"
         >
+          <source src="dashboard-powerbi.mp4" type="video/mp4">
+          Votre navigateur ne prend pas en charge la vidéo.
+        </video>
 
       </article>
 
