@@ -2,49 +2,296 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rania Fajri | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rania Fajri | Portfolio Data & BI</title>
+  <meta name="description" content="Portfolio de Rania Fajri, étudiante en Master MSI, spécialisée en Data Analysis et Business Intelligence.">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
+
 <body>
 
-    <header>
-        <h1>Rania Fajri</h1>
-        <p>Data Analysis | Business Intelligence | Systèmes d'Information</p>
-    </header>
+  <!-- NAVIGATION -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="#accueil" class="logo">
+        Rania Fajri<span>.</span>
+      </a>
 
-    <main>
-        <section>
-            <h2>Bienvenue sur mon portfolio !</h2>
-            <p>
-                Étudiante en Master Management des Systèmes
-                d'Information à Grenoble, je suis passionnée
-                par l'analyse et la valorisation des données.
-            </p>
-            <p>
-                Je recherche un stage à partir du 15 mars 2027.
-            </p>
-        </section>
+      <div class="nav-links">
+        <a href="#accueil" data-i18n="navHome">Accueil</a>
+        <a href="#projets" data-i18n="navProjects">Projets</a>
+        <a href="#competences" data-i18n="navSkills">Compétences</a>
+        <a href="#parcours" data-i18n="navExperience">Parcours</a>
+        <a href="#apropos" data-i18n="navAbout">À propos</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+      </div>
 
-        <section>
-            <h2>Mes projets</h2>
-            <ul>
-                <li>Site web sur le ski</li>
-                <li>CV en HTML et CSS</li>
-                <li>Modélisation de bases de données</li>
-                <li>Business Intelligence avec Power BI</li>
-            </ul>
-        </section>
+      <div class="language-switch">
+        <button type="button" id="lang-fr" class="active">FR</button>
+        <span>|</span>
+        <button type="button" id="lang-en">EN</button>
+      </div>
+    </nav>
+  </header>
 
-        <section>
-            <h2>Contact</h2>
-            <p>
-                <a href="mailto:rania_fajri@icloud.com">
-                    Me contacter par email
-                </a>
+  <main>
+
+    <!-- ACCUEIL -->
+    <section id="accueil" class="hero container">
+
+      <p class="hero-label">
+        <span class="orange-line"></span>
+        <span data-i18n="heroLabel">
+          Master MSI — Intelligence des données
+        </span>
+      </p>
+
+      <h1 data-i18n="heroTitle">
+        Étudiante en <span>Master MSI</span>
+      </h1>
+
+      <p class="hero-description" data-i18n="heroDescription">
+        En dernière année de Master Management des Systèmes
+        d'Information, parcours Intelligence des données,
+        je recherche un stage en Data Analysis et Business
+        Intelligence à partir du 15 mars 2027.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projets" class="btn btn-primary" data-i18n="discoverProjects">
+          Découvrir mes projets ↗
+        </a>
+
+        <a href="#contact" class="btn btn-outline" data-i18n="contactMe">
+          Me contacter
+        </a>
+      </div>
+
+    </section>
+
+    <!-- PROJETS -->
+    <section id="projets" class="section container">
+
+      <div class="section-heading">
+        <h2 data-i18n="projectsTitle">Mes projets</h2>
+        <p data-i18n="projectsIntro">
+          Une sélection de mes réalisations académiques et personnelles.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="project-visual ski-visual">
+            <span>01</span>
+            <span class="visual-icon">◭</span>
+          </div>
+          <div class="project-content">
+            <h3 data-i18n="skiTitle">Site web sur le ski</h3>
+            <p data-i18n="skiDescription">
+              Développement d'un site web avec collecte
+              de données par API et web scraping.
             </p>
-        </section>
-    </main>
+            <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Python</span>
+              <span>API</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-visual bi-visual">
+            <span>02</span>
+            <span class="visual-icon">▥</span>
+          </div>
+          <div class="project-content">
+            <h3 data-i18n="biTitle">Business Intelligence</h3>
+            <p data-i18n="biDescription">
+              Création de rapports et tableaux de bord
+              pour l'analyse et la visualisation de données.
+            </p>
+            <div class="tags">
+              <span>Power BI</span>
+              <span>Reporting</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-visual cv-visual">
+            <span>03</span>
+            <span class="visual-icon">&lt;/&gt;</span>
+          </div>
+          <div class="project-content">
+            <h3 data-i18n="cvTitle">CV en HTML & CSS</h3>
+            <p data-i18n="cvDescription">
+              Conception d'un CV web responsive
+              avec HTML et CSS.
+            </p>
+            <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-visual db-visual">
+            <span>04</span>
+            <span class="visual-icon">▤</span>
+          </div>
+          <div class="project-content">
+            <h3 data-i18n="dbTitle">Bases de données</h3>
+            <p data-i18n="dbDescription">
+              Modélisation et implémentation
+              de bases de données relationnelles.
+            </p>
+            <div class="tags">
+              <span>SQL</span>
+              <span>MySQL</span>
+              <span>Modélisation</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- COMPÉTENCES -->
+    <section id="competences" class="section section-soft">
+      <div class="container">
+
+        <div class="section-heading">
+          <h2 data-i18n="skillsTitle">Mes compétences</h2>
+          <p data-i18n="skillsIntro">
+            Des outils techniques au service de l'analyse des données.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Data Analysis</h3>
+            <p>Python · SQL · Pandas</p>
+          </div>
+
+          <div class="skill-card">
+            <h3>Business Intelligence</h3>
+            <p>Power BI · Tableau · Reporting</p>
+          </div>
+
+          <div class="skill-card">
+            <h3 data-i18n="development">Développement</h3>
+            <p>HTML · CSS · Python</p>
+          </div>
+
+          <div class="skill-card">
+            <h3 data-i18n="informationSystems">
+              Systèmes d'information
+            </h3>
+            <p>MySQL · MongoDB · SAP · AWS</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PARCOURS -->
+    <section id="parcours" class="section container">
+      <div class="section-heading">
+        <h2 data-i18n="experienceTitle">Mon parcours</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-date">2025 — 2027</span>
+          <h3 data-i18n="masterTitle">
+            Master Management des Systèmes d'Information
+          </h3>
+          <p>Grenoble INP — IAE</p>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-date">2026</span>
+          <h3 data-i18n="hagerTitle">
+            Stage — Data Management Analyst
+          </h3>
+          <p>Hager Group</p>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-date">2025</span>
+          <h3 data-i18n="cciTitle">
+            Stage — Analyse de données et programmation
+          </h3>
+          <p>CCI Campus Colmar</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section id="apropos" class="section section-soft">
+      <div class="container about-content">
+        <div class="section-heading">
+          <h2 data-i18n="aboutTitle">À propos de moi</h2>
+        </div>
+
+        <p data-i18n="aboutText">
+          Étudiante en dernière année de Master MSI,
+          je m'intéresse à la manière dont les données
+          peuvent accompagner les décisions des organisations.
+          Mon parcours associe management, systèmes
+          d'information et compétences techniques.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section container contact-section">
+
+      <h2 data-i18n="contactTitle">Travaillons ensemble.</h2>
+
+      <p data-i18n="contactDescription">
+        Je recherche un stage en Data Analysis et
+        Business Intelligence à partir du 15 mars 2027.
+      </p>
+
+      <div class="contact-links">
+        <a href="mailto:rania_fajri@icloud.com" class="btn btn-primary">
+          Email ↗
+        </a>
+
+        <a href="https://www.linkedin.com/in/rania-fajri"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn-outline">
+          LinkedIn ↗
+        </a>
+
+        <a href="https://github.com/rrania6"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn-outline">
+          GitHub ↗
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- PIED DE PAGE -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2026 Rania Fajri</p>
+      <p data-i18n="footerText">
+        Portfolio — Data Analysis & Business Intelligence
+      </p>
+    </div>
+  </footer>
 
 </body>
 </html>
