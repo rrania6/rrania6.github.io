@@ -31,10 +31,11 @@ const translations = {
     projectsIntro:
       "Une sélection de mes réalisations académiques et personnelles.",
 
-    skiTitle: "Site web sur le ski",
+    skiTitle: "À la découverte du Ski",
     skiDescription:
-      "Développement d'un site web avec collecte " +
-      "de données par API et web scraping.",
+     "Site web pédagogique réalisé en équipe dans le cadre " +
+     "d'un projet universitaire. Présentation des stations " +
+     "de ski, des équipements et de conseils pour les débutants.",
 
     biTitle: "Business Intelligence",
     biDescription:
@@ -108,10 +109,11 @@ const translations = {
     projectsIntro:
       "A selection of my academic and personal projects.",
 
-    skiTitle: "Ski Website",
-    skiDescription:
-      "Development of a website using API data " +
-      "collection and Python web scraping.",
+   skiTitle: "Discovering Skiing",
+skiDescription:
+  "Educational website developed as a team project " +
+  "for university. Featuring ski resorts, equipment " +
+  "and practical advice for beginners.",
 
     biTitle: "Business Intelligence",
     biDescription:
