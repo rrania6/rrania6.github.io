@@ -599,3 +599,29 @@ button {
   color: #f47b36;
   text-decoration: underline;
 }
+/* ======================================
+   IMAGES DES CARTES DE PROJETS
+   ====================================== */
+
+.project-visual {
+  overflow: hidden;
+  border-radius: 16px;
+  margin: 15px 15px 0;
+}
+
+.project-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Image du tableau de bord Power BI */
+.bi-visual {
+  background: #ffffff;
+}
+
+.bi-visual img {
+  object-fit: contain;
+}
