@@ -1,168 +1,242 @@
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Projets Business Intelligence | Rania Fajri</title>
 
+  <!-- CSS du portfolio principal -->
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Styles propres à cette page -->
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f8fc;
-      color: #172b4d;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #19365b;
-      color: white;
-      padding: 45px 20px;
+    .bi-intro {
+      padding: 90px 0 65px;
       text-align: center;
     }
 
-    header h1 {
-      margin-bottom: 10px;
+    .bi-intro h1 {
+      font-size: clamp(32px, 4vw, 46px);
+      letter-spacing: -1.5px;
+      line-height: 1.2;
+      margin-bottom: 20px;
     }
 
-    header p {
-      color: #dbe8f7;
+    .bi-intro h1 span {
+      color: var(--blue);
     }
 
-    main {
-      max-width: 1050px;
-      margin: 40px auto;
-      padding: 0 20px;
+    .bi-intro p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--text);
+      font-size: 17px;
     }
 
-    .projet {
+    .bi-project {
       background: white;
-      border: 1px solid #e1e8f0;
+      border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 28px;
+      padding: 32px;
       margin-bottom: 28px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.04);
+      box-shadow: 0 4px 16px rgba(17, 24, 39, 0.035);
     }
 
-    .projet h2 {
-      margin-top: 0;
-      color: #19365b;
+    .bi-project h3 {
+      font-size: 23px;
+      margin-bottom: 15px;
     }
 
-    .projet img {
+    .bi-project p {
+      color: var(--text);
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .bi-project img {
       display: block;
       width: 100%;
-      max-width: 900px;
       height: auto;
-      border-radius: 10px;
-      margin: 20px auto;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-top: 25px;
     }
 
-    .etiquette {
-      display: inline-block;
-      background: #e8f0fa;
-      color: #234d7c;
-      border-radius: 20px;
-      padding: 5px 12px;
-      font-size: 13px;
-      margin: 4px;
-    }
-
-    .placeholder {
-      border: 2px dashed #cbd7e6;
-      background: #f8fbff;
-      padding: 35px 20px;
-      border-radius: 10px;
+    .bi-placeholder {
+      padding: 45px 20px;
+      margin-top: 25px;
+      background: var(--soft);
+      border: 1px dashed #cdd6e4;
+      border-radius: 12px;
       text-align: center;
-      color: #63748b;
-      margin-top: 20px;
+      color: #687385;
+      font-size: 14px;
     }
 
-    .retour {
-      display: inline-block;
-      margin: 20px 0 40px;
-      color: #19365b;
-      text-decoration: none;
-      font-weight: bold;
+    .bi-bottom {
+      text-align: center;
+      margin-top: 45px;
+    }
+
+    @media (max-width: 600px) {
+      .bi-intro {
+        padding: 65px 0 45px;
+      }
+
+      .bi-project {
+        padding: 20px;
+      }
+
+      .bi-project h3 {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Mes projets Business Intelligence</h1>
-    <p>Power BI | Modélisation des données | Reporting</p>
+  <!-- NAVIGATION -->
+  <header class="header">
+    <nav class="nav container">
+
+      <a href="../" class="logo">
+        Rania Fajri<span>.</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="../">Accueil</a>
+        <a href="../#projets">Projets</a>
+        <a href="../#competences">Compétences</a>
+        <a href="../#parcours">Parcours</a>
+        <a href="../#apropos">À propos</a>
+        <a href="../#contact">Contact</a>
+      </div>
+
+    </nav>
   </header>
 
-  <main>
+  <!-- INTRODUCTION -->
+  <section class="bi-intro">
+    <div class="container">
 
-    <section class="projet">
-      <h2>01 — Analyse des ventes de jeux vidéo</h2>
-
-      <p>
-        Projet universitaire réalisé avec Power BI.
-        Création d'un tableau de bord interactif permettant
-        d'analyser les ventes de jeux vidéo selon les consoles,
-        les éditeurs, les genres et les régions.
-      </p>
-
-      <span class="etiquette">Power BI</span>
-      <span class="etiquette">Data Visualisation</span>
-      <span class="etiquette">Analyse de données</span>
-
-      <img
-        src="dashboard-powerbi.png"
-        alt="Tableau de bord Power BI sur les ventes de jeux vidéo"
-      >
-    </section>
-
-    <section class="projet">
-      <h2>02 — Modélisation des données : schéma en étoile</h2>
-
-      <p>
-        Travail réalisé en stage autour de la structuration
-        des données et de leur modélisation pour faciliter
-        l'analyse et le reporting.
-      </p>
-
-      <span class="etiquette">Modélisation</span>
-      <span class="etiquette">Power BI</span>
-
-      <div class="placeholder">
-        Visuel du schéma en étoile à ajouter
+      <div class="hero-label">
+        <span class="orange-line"></span>
+        Data Analysis & Business Intelligence
       </div>
-    </section>
 
-    <section class="projet">
-      <h2>03 — Conception de tableaux de bord</h2>
+      <h1>
+        Mes projets <span>Business Intelligence</span>
+      </h1>
 
       <p>
-        Présentation d'un exemple de tableau de bord
-        illustrant l'organisation des indicateurs de performance
-        et la visualisation des données, sans informations
-        confidentielles.
+        Découvrez mes réalisations en analyse de données,
+        modélisation et conception de tableaux de bord
+        avec Power BI.
       </p>
 
-      <span class="etiquette">KPI</span>
-      <span class="etiquette">Reporting</span>
-      <span class="etiquette">Power BI</span>
+    </div>
+  </section>
 
-      <div class="placeholder">
-        Exemple de tableau de bord à ajouter
+  <!-- PROJETS -->
+  <section class="section section-soft">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Mes réalisations</h2>
+        <p>Projets universitaires et expériences professionnelles.</p>
       </div>
-    </section>
 
-    <a class="retour" href="../">
-      ← Retour au portfolio
-    </a>
+      <!-- PROJET 1 -->
+      <article class="bi-project">
 
-  </main>
+        <h3>01 — Analyse des ventes de jeux vidéo</h3>
+
+        <p>
+          Projet universitaire réalisé avec Power BI.
+          Création d'un tableau de bord interactif permettant
+          d'analyser les ventes de jeux vidéo par console,
+          éditeur, genre et région.
+        </p>
+
+        <div class="tags">
+          <span>Power BI</span>
+          <span>Data Visualisation</span>
+          <span>Analyse de données</span>
+        </div>
+
+        <img
+          src="dashboard-powerbi.png"
+          alt="Tableau de bord Power BI sur les ventes de jeux vidéo"
+        >
+
+      </article>
+
+      <!-- PROJET 2 -->
+      <article class="bi-project">
+
+        <h3>02 — Modélisation des données : schéma en étoile</h3>
+
+        <p>
+          Travail réalisé en stage autour de la modélisation
+          des données pour faciliter leur analyse et leur
+          exploitation dans Power BI.
+        </p>
+
+        <div class="tags">
+          <span>Power BI</span>
+          <span>Modélisation des données</span>
+          <span>Schéma en étoile</span>
+        </div>
+
+        <div class="bi-placeholder">
+          Visuel du schéma en étoile à ajouter.
+        </div>
+
+      </article>
+
+      <!-- PROJET 3 -->
+      <article class="bi-project">
+
+        <h3>03 — Conception de tableaux de bord</h3>
+
+        <p>
+          Présentation de la structure d'un tableau de bord
+          et de l'organisation des indicateurs de performance,
+          sans divulguer de données confidentielles.
+        </p>
+
+        <div class="tags">
+          <span>Power BI</span>
+          <span>KPI</span>
+          <span>Reporting</span>
+        </div>
+
+        <div class="bi-placeholder">
+          Exemple de tableau de bord à ajouter.
+        </div>
+
+      </article>
+
+      <div class="bi-bottom">
+        <a href="../#projets" class="btn btn-primary">
+          ← Retour à mes projets
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PIED DE PAGE -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© Rania Fajri</p>
+      <p>Portfolio — Data Analysis & Business Intelligence</p>
+    </div>
+  </footer>
 
 </body>
 </html>
