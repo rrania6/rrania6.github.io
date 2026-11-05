@@ -583,3 +583,19 @@ button {
     transition: none;
   }
 }
+/* Lien pour découvrir un projet */
+
+.project-link {
+  display: inline-block;
+  margin-top: 18px;
+  color: #0755bb;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project-link:hover {
+  color: #f47b36;
+  text-decoration: underline;
+}
