@@ -41,7 +41,7 @@ const translations = {
     biDescription:
       "Création de rapports et tableaux de bord " +
       "pour l'analyse et la visualisation de données.",
-
+   biLink: "Découvrir le projet →",
     cvTitle: "CV en HTML & CSS",
     cvDescription:
       "Conception d'un CV web responsive avec HTML et CSS.",
@@ -119,7 +119,7 @@ skiDescription:
     biDescription:
       "Creation of reports and dashboards " +
       "for data analysis and visualization.",
-
+   biLink: "Discover the project →",
     cvTitle: "HTML & CSS Resume",
     cvDescription:
       "Design of a responsive online resume using HTML and CSS.",
