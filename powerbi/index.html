@@ -99,17 +99,122 @@
       .bi-video {
         width: 100%;
       }
-    }
-    /* Images des trois modèles en étoile */
-    .schema-stage {
-      display: block;
-      width: 90%;
-      max-width: 850px;
-      height: auto;
-      margin: 20px auto 35px;
-      border-radius: 12px;
-      border: 1px solid #e5e7eb;
-    }
+  
+/* Carrousel des schémas Power BI */
+.schema-carousel {
+  position: relative;
+  width: 75%;
+  max-width: 750px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.schema-viewport {
+  overflow: hidden;
+  border-radius: 12px;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.schema-viewport:active {
+  cursor: grabbing;
+}
+
+.schema-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.schema-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  user-select: none;
+}
+
+.schema-slide h4 {
+  font-size: 19px;
+  margin-bottom: 18px;
+}
+
+.schema-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  pointer-events: auto;
+}
+
+.schema-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #dbe4f0;
+  border-radius: 50%;
+  background: white;
+  color: #0755bb;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.schema-prev {
+  left: -18px;
+}
+
+.schema-next {
+  right: -18px;
+}
+
+.schema-arrow:hover {
+  background: #0755bb;
+  color: white;
+}
+
+.schema-dots {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.schema-dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #cbd5e1;
+  cursor: pointer;
+}
+
+.schema-dots button.active {
+  background: #0755bb;
+}
+
+.schema-hint {
+  margin-top: 12px;
+  font-size: 13px !important;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .schema-carousel {
+    width: 100%;
+  }
+
+  .schema-prev {
+    left: 4px;
+  }
+
+  .schema-next {
+    right: 4px;
+  }
+}
+
 
   </style>
 </head>
@@ -244,17 +349,61 @@ La principale difficulté était de gérer différentes devises
 et des taux de change révisés chaque mois.
 </p>
 
-<h4>Modèle 1 — Première approche</h4>
-<img src="modele-1.jpg" alt="Premier modèle en étoile"
-     class="schema-stage">
+<!-- Carrousel des trois modèles -->
+<div class="schema-carousel">
 
-<h4>Modèle 2 — Modèle intermédiaire</h4>
-<img src="modele-2.jpg" alt="Deuxième modèle en étoile"
-     class="schema-stage">
+  <button class="schema-arrow schema-prev"
+          type="button"
+          aria-label="Modèle précédent">
+    &#10094;
+  </button>
 
-<h4>Modèle 3 — Modèle final retenu</h4>
-<img src="modele-3.jpg" alt="Modèle final en étoile"
-     class="schema-stage">
+  <div class="schema-viewport">
+    <div class="schema-track">
+
+      <div class="schema-slide">
+        <h4>Modèle 1 — Première approche</h4>
+        <a href="modele-1.jpg" target="_blank">
+          <img src="modele-1.jpg" alt="Premier modèle en étoile">
+        </a>
+      </div>
+
+      <div class="schema-slide">
+        <h4>Modèle 2 — Modèle intermédiaire</h4>
+        <a href="modele-2.jpg" target="_blank">
+          <img src="modele-2.jpg" alt="Deuxième modèle en étoile">
+        </a>
+      </div>
+
+      <div class="schema-slide">
+        <h4>Modèle 3 — Modèle final retenu</h4>
+        <a href="modele-3.jpg" target="_blank">
+          <img src="modele-3.jpg" alt="Modèle final implémenté">
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <button class="schema-arrow schema-next"
+          type="button"
+          aria-label="Modèle suivant">
+    &#10095;
+  </button>
+
+  <div class="schema-dots">
+    <button class="active" type="button" aria-label="Modèle 1"></button>
+    <button type="button" aria-label="Modèle 2"></button>
+    <button type="button" aria-label="Modèle 3"></button>
+  </div>
+
+  <p class="schema-hint">
+    Faites glisser pour changer de modèle.
+    Cliquez sur l'image pour l'agrandir.
+  </p>
+
+</div>
+
 
 <p>
 Après avoir comparé plusieurs approches, j'ai retenu et implémenté
@@ -306,6 +455,121 @@ pour représenter plusieurs dates métier.
       <p>Portfolio — Data Analysis & Business Intelligence</p>
     </div>
   </footer>
+
+/* Carrousel des schémas Power BI */
+.schema-carousel {
+  position: relative;
+  width: 75%;
+  max-width: 750px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.schema-viewport {
+  overflow: hidden;
+  border-radius: 12px;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.schema-viewport:active {
+  cursor: grabbing;
+}
+
+.schema-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.schema-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  user-select: none;
+}
+
+.schema-slide h4 {
+  font-size: 19px;
+  margin-bottom: 18px;
+}
+
+.schema-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  pointer-events: auto;
+}
+
+.schema-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #dbe4f0;
+  border-radius: 50%;
+  background: white;
+  color: #0755bb;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.schema-prev {
+  left: -18px;
+}
+
+.schema-next {
+  right: -18px;
+}
+
+.schema-arrow:hover {
+  background: #0755bb;
+  color: white;
+}
+
+.schema-dots {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.schema-dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #cbd5e1;
+  cursor: pointer;
+}
+
+.schema-dots button.active {
+  background: #0755bb;
+}
+
+.schema-hint {
+  margin-top: 12px;
+  font-size: 13px !important;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .schema-carousel {
+    width: 100%;
+  }
+
+  .schema-prev {
+    left: 4px;
+  }
+
+  .schema-next {
+    right: 4px;
+  }
+}
 
 </body>
 </html>
