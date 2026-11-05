@@ -30,7 +30,7 @@ const translations = {
     projectsTitle: "Mes projets",
     projectsIntro:
       "Une sélection de mes réalisations académiques et personnelles.",
-
+    skiLink: "Découvrir le projet →",
     skiTitle: "À la découverte du Ski",
     skiDescription:
      "Site web pédagogique réalisé en équipe dans le cadre " +
@@ -108,7 +108,7 @@ const translations = {
     projectsTitle: "My projects",
     projectsIntro:
       "A selection of my academic and personal projects.",
-
+   skiLink: "Discover the project →",
    skiTitle: "Discovering Skiing",
 skiDescription:
   "Educational website developed as a team project " +
