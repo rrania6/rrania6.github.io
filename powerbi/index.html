@@ -268,6 +268,26 @@
         right: 4px;
       }
     }
+    
+/* Description qui accompagne chaque modèle */
+.schema-description {
+  max-width: 700px;
+  margin: 22px auto 10px !important;
+  text-align: center;
+  font-size: 14px !important;
+  line-height: 1.7;
+  color: #475569 !important;
+}
+
+/* Indication discrète sous le carrousel */
+.schema-hint {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 12px !important;
+  color: #a0aabc !important;
+  opacity: 0.65;
+}
+
   </style>
 </head>
 
@@ -412,36 +432,108 @@
           l'analyse dans Power BI.
         </p>
 
-        <!-- CARROUSEL DES TROIS MODÈLES -->
-        <div class="schema-carousel">
+        
+<!-- CARROUSEL DES TROIS MODÈLES -->
+<div class="schema-carousel">
 
-          <button
-            class="schema-arrow schema-prev"
-            type="button"
-            aria-label="Modèle précédent">
-            &#10094;
-          </button>
+  <button class="schema-arrow schema-prev"
+          type="button"
+          aria-label="Modèle précédent">
+    &#10094;
+  </button>
 
-          <div class="schema-viewport">
-            <div class="schema-track">
+  <div class="schema-viewport">
+    <div class="schema-track">
 
-              <!-- MODÈLE 1 -->
-              <div class="schema-slide">
+      <!-- MODÈLE 1 -->
+      <div class="schema-slide">
+        <h4>Modèle 1 — Première approche</h4>
 
-                <h4>Modèle 1 — Première approche</h4>
+        <div class="schema-image-area">
+          <a href="modele-1.jpg" target="_blank"
+             rel="noopener noreferrer">
+            <img src="modele-1.jpg"
+                 alt="Premier modèle en étoile"
+                 draggable="false">
+          </a>
+        </div>
 
-                <div class="schema-image-area">
-                  <a href="modele-1.jpg"
-                     target="_blank"
-                     rel="noopener noreferrer">
-                    <img
-                      src="modele-1.jpg"
-                      alt="Premier modèle en étoile"
-                      draggable="false">
-                  </a>
-                </div>
+        <p class="schema-description">
+          Cette première approche intégrait directement le taux
+          de change dans la dimension des devises (DimCurrency).
+          Les différentes dates métier étaient représentées
+          par trois dimensions distinctes.
+        </p>
+      </div>
 
-              </div>
+      <!-- MODÈLE 2 -->
+      <div class="schema-slide">
+        <h4>Modèle 2 — Modèle intermédiaire</h4>
+
+        <div class="schema-image-area">
+          <a href="modele-2.png" target="_blank"
+             rel="noopener noreferrer">
+            <img src="modele-2.png"
+                 alt="Deuxième modèle en étoile"
+                 draggable="false">
+          </a>
+        </div>
+
+        <p class="schema-description">
+          Cette deuxième version introduisait une table
+          de taux de change distincte (Fact_ExchangeRate),
+          afin de séparer les informations relatives aux
+          devises de celles concernant les taux de change.
+        </p>
+      </div>
+
+      <!-- MODÈLE 3 -->
+      <div class="schema-slide">
+        <h4>Modèle 3 — Modèle final retenu</h4>
+
+        <div class="schema-image-area">
+          <a href="modele-3.jpg" target="_blank"
+             rel="noopener noreferrer">
+            <img src="modele-3.jpg"
+                 alt="Modèle final implémenté"
+                 draggable="false">
+          </a>
+        </div>
+
+        <p class="schema-description">
+          Après comparaison des différentes approches,
+          j'ai retenu et implémenté un troisième modèle
+          intégrant une table de taux de change reliée
+          à DimCurrency. Cette architecture utilise
+          également une dimension de dates commune
+          pour représenter plusieurs dates métier.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <button class="schema-arrow schema-next"
+          type="button"
+          aria-label="Modèle suivant">
+    &#10095;
+  </button>
+
+  <div class="schema-dots">
+    <button class="active" type="button"
+            aria-label="Afficher le modèle 1"></button>
+    <button type="button"
+            aria-label="Afficher le modèle 2"></button>
+    <button type="button"
+            aria-label="Afficher le modèle 3"></button>
+  </div>
+
+  <p class="schema-hint">
+    Faites glisser pour changer de modèle.
+    Cliquez sur l'image pour l'agrandir.
+  </p>
+
+</div>
 
               <!-- MODÈLE 2 -->
               <div class="schema-slide">
@@ -502,34 +594,6 @@
             Faites glisser pour changer de modèle.
             Cliquez sur l'image pour l'agrandir.
           </p>
-
-        </div>
-
-        <h4>Évolution de la modélisation</h4>
-
-        <p>
-          La première approche intégrait directement le taux
-          de change dans la dimension des devises.
-          La deuxième introduisait une table distincte
-          pour gérer les taux de change.
-        </p>
-
-        <p>
-          Après comparaison des différentes approches,
-          j'ai retenu et implémenté un troisième modèle
-          distinguant la dimension des devises (DimCurrency)
-          et la table des taux de change (Fact_ExchangeRate).
-          Cette architecture utilise également une dimension
-          de dates commune pour représenter plusieurs
-          dates métier.
-        </p>
-
-        <div class="tags">
-          <span>Power BI</span>
-          <span>Business Intelligence</span>
-          <span>Modélisation en étoile</span>
-          <span>Taux de change</span>
-        </div>
 
       </article>
 
