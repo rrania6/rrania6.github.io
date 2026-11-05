@@ -600,13 +600,15 @@ button {
   text-decoration: underline;
 }
 /* ======================================
-   IMAGES DES CARTES DE PROJETS
+   GRANDES IMAGES DES CARTES DE PROJETS
    ====================================== */
 
 .project-visual {
+  height: 190px;
+  margin: 10px 10px 0;
+  padding: 0;
   overflow: hidden;
   border-radius: 16px;
-  margin: 15px 15px 0;
 }
 
 .project-visual img {
@@ -617,7 +619,7 @@ button {
   border-radius: 16px;
 }
 
-/* Image du tableau de bord Power BI */
+/* Image du projet Power BI */
 .bi-visual {
   background: #ffffff;
 }
