@@ -8,15 +8,10 @@
 
   <title>Projets Business Intelligence | Rania Fajri</title>
 
-  <!-- CSS principal du portfolio -->
   <link rel="stylesheet" href="../style.css">
-
-    <!-- JS principal du portfolio -->
   <script src="../script.js" defer></script>
+
   <style>
-
-    /* INTRODUCTION */
-
     .bi-intro {
       padding: 90px 0 65px;
       text-align: center;
@@ -30,22 +25,19 @@
     }
 
     .bi-intro h1 span {
-      color: var(--blue);
+      color: var(--blue, #0755bb);
     }
 
     .bi-intro p {
       max-width: 700px;
       margin: 0 auto;
-      color: var(--text);
+      color: var(--text, #475569);
       font-size: 17px;
     }
 
-
-    /* CARTES DES PROJETS */
-
     .bi-project {
       background: white;
-      border: 1px solid var(--border);
+      border: 1px solid var(--border, #e5e7eb);
       border-radius: 16px;
       padding: 32px;
       margin-bottom: 28px;
@@ -57,20 +49,12 @@
       margin-bottom: 15px;
     }
 
-    .bi-project h4 {
-      font-size: 20px;
-      margin-bottom: 14px;
-    }
-
     .bi-project p {
-      color: var(--text);
+      color: var(--text, #475569);
       font-size: 15px;
       line-height: 1.7;
       margin-bottom: 20px;
     }
-
-
-    /* SOUS-TITRES AVEC BARRE ORANGE */
 
     .bi-project .bi-subtitle {
       font-size: 16px;
@@ -82,9 +66,6 @@
       margin-bottom: 18px;
       line-height: 1.5;
     }
-
-
-    /* VIDÉOS ET IMAGES */
 
     .bi-video,
     .bi-schema-image {
@@ -103,9 +84,6 @@
       color: #94a3b8 !important;
       margin-top: 10px;
     }
-
-
-    /* CARROUSEL DU PROJET 02 */
 
     .schema-carousel {
       position: relative;
@@ -185,9 +163,6 @@
       color: #475569 !important;
     }
 
-
-    /* FLÈCHES */
-
     .schema-arrow {
       position: absolute;
       top: 50%;
@@ -221,9 +196,6 @@
       color: white;
     }
 
-
-    /* POINTS DU CARROUSEL */
-
     .schema-dots {
       display: flex;
       justify-content: center;
@@ -253,19 +225,12 @@
       opacity: 0.65;
     }
 
-
-    /* BAS DE PAGE */
-
     .bi-bottom {
       text-align: center;
       margin-top: 45px;
     }
 
-
-    /* RESPONSIVE */
-
     @media (max-width: 600px) {
-
       .bi-intro {
         padding: 65px 0 45px;
       }
@@ -299,47 +264,43 @@
       .schema-next {
         right: 4px;
       }
-
     }
-
   </style>
 </head>
-
 
 <body>
 
   <!-- NAVIGATION -->
 
   <header class="header">
-
     <nav class="nav container">
 
-      <a href="../" class="logo">
+      <a href="../#accueil" class="logo">
         Rania Fajri<span>.</span>
       </a>
 
       <div class="nav-links">
-        <a href="../">Accueil</a>
-        <a href="../#projets">Projets</a>
-        <a href="../#competences">Compétences</a>
-        <a href="../#parcours">Parcours</a>
-        <a href="../#apropos">À propos</a>
-        <a href="../#contact">Contact</a>
+        <a href="../#accueil" data-i18n="navHome">Accueil</a>
+        <a href="../#projets" data-i18n="navProjects">Projets</a>
+        <a href="../#competences" data-i18n="navSkills">Compétences</a>
+        <a href="../#parcours" data-i18n="navExperience">Parcours</a>
+        <a href="../#apropos" data-i18n="navAbout">À propos</a>
+        <a href="../#contact" data-i18n="navContact">Contact</a>
       </div>
+
       <div class="language-switch">
         <button type="button" id="lang-fr" class="active">FR</button>
         <span>|</span>
         <button type="button" id="lang-en">EN</button>
       </div>
-    </nav>
 
+    </nav>
   </header>
 
 
   <!-- INTRODUCTION -->
 
   <section class="bi-intro">
-
     <div class="container">
 
       <div class="hero-label">
@@ -347,42 +308,42 @@
         Data Analysis &amp; Business Intelligence
       </div>
 
-      <h1>
+      <h1 data-i18n="biPageTitle">
         Mes projets <span>Business Intelligence</span>
       </h1>
 
-      <p>
+      <p data-i18n="biPageIntro">
         Découvrez mes réalisations en analyse de données,
         modélisation et conception de rapports interactifs
         avec Power BI.
       </p>
 
     </div>
-
   </section>
 
 
   <!-- PROJETS -->
 
   <section class="section section-soft">
-
     <div class="container">
 
       <div class="section-heading">
-        <h2>Mes réalisations</h2>
-        <p>Projets universitaires et expériences professionnelles.</p>
+        <h2 data-i18n="biPageSection">Mes réalisations</h2>
+        <p data-i18n="biPageSectionIntro">
+          Projets universitaires et expériences professionnelles.
+        </p>
       </div>
 
 
-      <!-- ================================= -->
       <!-- PROJET 01 : VENTES DE JEUX VIDÉO -->
-      <!-- ================================= -->
 
       <article class="bi-project">
 
-        <h3>01 — Analyse des ventes de jeux vidéo</h3>
+        <h3 data-i18n="biProject1Title">
+          01 — Analyse des ventes de jeux vidéo
+        </h3>
 
-        <p>
+        <p data-i18n="biProject1Intro">
           Projet universitaire réalisé avec Power BI.
           Création d'un tableau de bord interactif permettant
           d'analyser les ventes de jeux vidéo par console,
@@ -395,10 +356,7 @@
           <span>Analyse de données</span>
         </div>
 
-
-        <!-- VISUALISATION PROJET 01 -->
-
-        <h4 class="bi-subtitle">
+        <h4 class="bi-subtitle" data-i18n="biProject1Visual">
           Visualisation des données — Tableau de bord interactif
         </h4>
 
@@ -409,64 +367,56 @@
           loop
           playsinline
           preload="metadata"
-          aria-label="Animation du tableau de bord Power BI sur les ventes de jeux vidéo"
-        >
+          aria-label="Tableau de bord Power BI sur les ventes de jeux vidéo">
+
           <source src="dashboard-powerbi.mp4" type="video/mp4">
+
           Votre navigateur ne prend pas en charge la vidéo.
         </video>
 
-
-        <!-- MODÉLISATION PROJET 01 -->
-
-        <h4 class="bi-subtitle">
+        <h4 class="bi-subtitle" data-i18n="biProject1Model">
           Modélisation des données — Schéma en étoile
         </h4>
 
-        <p>
-          Conception d'un modèle de données en étoile
-          composé d'une table de faits (Fact) et de
-          trois tables de dimensions (DimProduit,
-          DimTemps et DimLieu).
-
-          Cette structure facilite l'analyse
-          des ventes de jeux vidéo dans Power BI.
+        <p data-i18n="biProject1ModelText">
+          Conception d'un modèle de données en étoile composé
+          d'une table de faits (Fact) et de trois tables
+          de dimensions (DimProduit, DimTemps et DimLieu).
+          Cette structure facilite l'analyse des ventes
+          de jeux vidéo dans Power BI.
         </p>
 
         <a
           href="schema-jeux-video.PNG"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
+
           <img
             src="schema-jeux-video.PNG"
-            alt="Schéma en étoile du projet Power BI sur les ventes de jeux vidéo"
+            alt="Schéma en étoile du projet jeux vidéo"
             class="bi-schema-image">
         </a>
 
-        <p class="bi-image-caption">
+        <p class="bi-image-caption" data-i18n="biImageHint">
           Cliquez sur le schéma pour l'agrandir.
         </p>
 
       </article>
 
 
-
-      <!-- ================================= -->
-      <!-- PROJET 02 : STAGE POWER BI         -->
-      <!-- ================================= -->
+      <!-- PROJET 02 : STAGE POWER BI -->
 
       <article class="bi-project">
 
-        <h3>
+        <h3 data-i18n="biProject2Title">
           02 — Projet de stage — Business Intelligence &amp; Power BI
         </h3>
 
-        <p>
-          Lors de mon stage, j'ai travaillé sur la
-          modélisation de données et le développement
-          de rapports Power BI interactifs destinés
-          au suivi des activités opérationnelles
-          et à l'analyse des performances.
+        <p data-i18n="biProject2Intro">
+          Lors de mon stage, j'ai travaillé sur la modélisation
+          de données et le développement de rapports Power BI
+          interactifs destinés au suivi des activités
+          opérationnelles et à l'analyse des performances.
         </p>
 
         <div class="tags">
@@ -476,67 +426,50 @@
           <span>Reporting &amp; KPI</span>
         </div>
 
-
-        <!-- VISUALISATION PROJET 02 -->
-
-        <h4 class="bi-subtitle">
+        <h4 class="bi-subtitle" data-i18n="biProject2Visual">
           Visualisation des données — Rapports Power BI interactifs
         </h4>
 
-        <p>
-          Dans le cadre de mon stage, j'ai développé
-          deux rapports Power BI multipages reposant
-          sur un même modèle de données.
-
-          Leur conception a porté sur l'organisation
-          des indicateurs clés de performance (KPI),
-          la création de visualisations interactives,
-          l'intégration de filtres et la navigation
-          entre plusieurs pages d'analyse.
-
-          Ces rapports ont été conçus pour faciliter
-          le suivi des activités opérationnelles,
+        <p data-i18n="biProject2VisualText">
+          Dans le cadre de mon stage, j'ai développé deux rapports
+          Power BI multipages reposant sur un même modèle de données.
+          Leur conception a porté sur l'organisation des indicateurs
+          clés de performance (KPI), la création de visualisations
+          interactives, l'intégration de filtres et la navigation
+          entre plusieurs pages d'analyse. Ces rapports ont été
+          conçus pour faciliter le suivi des activités opérationnelles,
           l'analyse des performances et le reporting.
         </p>
-
-        <!-- IMAGE RECONSTITUÉE DU STAGE -->
 
         <a
           href="dashboard-stage.png"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
+
           <img
             src="dashboard-stage.png"
-            alt="Reconstitution illustrative d'une interface de reporting Power BI"
+            alt="Reconstitution illustrative d'un rapport Power BI"
             class="bi-schema-image">
         </a>
 
-        <p class="bi-image-caption">
-          Reconstitution illustrative d'une interface
-          de reporting, sans données réelles de l'entreprise.
+        <p class="bi-image-caption" data-i18n="biProject2ImageCaption">
+          Reconstitution illustrative d'une interface de reporting,
+          sans données réelles de l'entreprise.
           Cliquez sur l'image pour l'agrandir.
         </p>
 
-
-        <!-- MODÉLISATION PROJET 02 -->
-
-        <h4 class="bi-subtitle">
+        <h4 class="bi-subtitle" data-i18n="biProject2Model">
           Modélisation des données — Schéma en étoile
         </h4>
 
-        <p>
-          La principale problématique de modélisation
-          concernait la gestion des taux de change.
-
-          Les achats étant réalisés dans plusieurs pays,
-          les montants pouvaient être exprimés dans
-          différentes devises, avec des taux de change
-          révisés chaque mois.
-
-          L'objectif était de concevoir un modèle
-          en étoile adapté à cette contrainte
-          et à l'analyse des données dans Power BI.
+        <p data-i18n="biProject2ModelText">
+          La principale problématique de modélisation concernait
+          la gestion des taux de change. Les achats étant réalisés
+          dans plusieurs pays, les montants pouvaient être exprimés
+          dans différentes devises, avec des taux de change révisés
+          chaque mois. L'objectif était de concevoir un modèle en
+          étoile adapté à cette contrainte et à l'analyse des données
+          dans Power BI.
         </p>
 
 
@@ -551,20 +484,18 @@
             &#10094;
           </button>
 
-
           <div class="schema-viewport">
-
             <div class="schema-track">
-
 
               <!-- MODÈLE 1 -->
 
               <div class="schema-slide">
 
-                <h4>Modèle 1 — Première approche</h4>
+                <h4 data-i18n="biModel1Title">
+                  Modèle 1 — Première approche
+                </h4>
 
                 <div class="schema-image-area">
-
                   <a
                     href="modele-1.jpg"
                     target="_blank"
@@ -574,18 +505,17 @@
                       src="modele-1.jpg"
                       alt="Premier modèle en étoile"
                       draggable="false">
-
                   </a>
-
                 </div>
 
-                <p class="schema-description">
+                <p
+                  class="schema-description"
+                  data-i18n="biModel1Description">
+
                   Cette première approche intégrait directement
                   le taux de change dans la dimension des devises
-                  (DimCurrency).
-
-                  Les différentes dates métier étaient
-                  représentées par trois dimensions distinctes.
+                  (DimCurrency). Les différentes dates métier
+                  étaient représentées par trois dimensions distinctes.
                 </p>
 
               </div>
@@ -595,10 +525,11 @@
 
               <div class="schema-slide">
 
-                <h4>Modèle 2 — Modèle intermédiaire</h4>
+                <h4 data-i18n="biModel2Title">
+                  Modèle 2 — Modèle intermédiaire
+                </h4>
 
                 <div class="schema-image-area">
-
                   <a
                     href="modele-2.jpg"
                     target="_blank"
@@ -608,17 +539,17 @@
                       src="modele-2.jpg"
                       alt="Deuxième modèle en étoile"
                       draggable="false">
-
                   </a>
-
                 </div>
 
-                <p class="schema-description">
-                  Cette deuxième version introduisait
-                  une table de taux de change distincte
-                  (Fact_ExchangeRate), afin de séparer
-                  les informations relatives aux devises
-                  de celles concernant les taux de change.
+                <p
+                  class="schema-description"
+                  data-i18n="biModel2Description">
+
+                  Cette deuxième version introduisait une table
+                  de taux de change distincte (Fact_ExchangeRate),
+                  afin de séparer les informations relatives aux
+                  devises de celles concernant les taux de change.
                 </p>
 
               </div>
@@ -628,10 +559,11 @@
 
               <div class="schema-slide">
 
-                <h4>Modèle 3 — Modèle final retenu</h4>
+                <h4 data-i18n="biModel3Title">
+                  Modèle 3 — Modèle final retenu
+                </h4>
 
                 <div class="schema-image-area">
-
                   <a
                     href="modele-3.jpg"
                     target="_blank"
@@ -641,30 +573,25 @@
                       src="modele-3.jpg"
                       alt="Modèle final implémenté"
                       draggable="false">
-
                   </a>
-
                 </div>
 
-                <p class="schema-description">
+                <p
+                  class="schema-description"
+                  data-i18n="biModel3Description">
+
                   Après comparaison des différentes approches,
                   j'ai retenu et implémenté un troisième modèle
                   intégrant une table de taux de change reliée
-                  à DimCurrency.
-
-                  Cette architecture utilise également
-                  une dimension de dates commune
+                  à DimCurrency. Cette architecture utilise
+                  également une dimension de dates commune
                   pour représenter plusieurs dates métier.
                 </p>
 
               </div>
 
-
             </div>
           </div>
-
-
-          <!-- FLÈCHE SUIVANTE -->
 
           <button
             class="schema-arrow schema-next"
@@ -673,31 +600,22 @@
             &#10095;
           </button>
 
-
-          <!-- POINTS DE NAVIGATION -->
-
           <div class="schema-dots">
-
             <button
               class="active"
               type="button"
-              aria-label="Afficher le modèle 1">
-            </button>
+              aria-label="Afficher le modèle 1"></button>
 
             <button
               type="button"
-              aria-label="Afficher le modèle 2">
-            </button>
+              aria-label="Afficher le modèle 2"></button>
 
             <button
               type="button"
-              aria-label="Afficher le modèle 3">
-            </button>
-
+              aria-label="Afficher le modèle 3"></button>
           </div>
 
-
-          <p class="schema-hint">
+          <p class="schema-hint" data-i18n="biCarouselHint">
             Faites glisser pour changer de modèle.
             Cliquez sur l'image pour l'agrandir.
           </p>
@@ -705,9 +623,10 @@
         </div>
 
 
-        <!-- CONCLUSION DU PROJET 02 -->
+        <p
+          style="margin-top: 30px;"
+          data-i18n="biProject2Conclusion">
 
-        <p style="margin-top: 30px;">
           Le modèle final a constitué une base commune
           pour les deux rapports Power BI, permettant
           de structurer les données et de faciliter
@@ -718,11 +637,7 @@
       </article>
 
 
-
-      <!-- ================================= -->
-      <!-- PROJET 03 : FUTUR PROJET           -->
-      <!-- MASQUÉ JUSQU'À SA PUBLICATION      -->
-      <!-- ================================= -->
+      <!-- PROJET 03 — MASQUÉ TEMPORAIREMENT -->
 
       <!--
       <article class="bi-project">
@@ -730,57 +645,53 @@
         <h3>03 — Titre du futur projet</h3>
 
         <p>
-          Présentation du projet :
-          contexte, objectifs et outils utilisés.
+          Présentation du contexte, des objectifs
+          et des outils utilisés.
         </p>
 
         <div class="tags">
           <span>Power BI</span>
-          <span>Analyse de données</span>
           <span>Data Visualisation</span>
+          <span>Analyse de données</span>
         </div>
-
 
         <h4 class="bi-subtitle">
           Visualisation des données
         </h4>
 
         <p>
-          Présentation des tableaux de bord,
-          des indicateurs clés de performance
-          et des visualisations réalisés.
+          Présentation des rapports, tableaux de bord,
+          indicateurs et visualisations.
         </p>
 
         <a
           href="futur-dashboard.png"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
+
           <img
             src="futur-dashboard.png"
-            alt="Visualisation du futur projet"
+            alt="Tableau de bord du projet 03"
             class="bi-schema-image">
         </a>
-
 
         <h4 class="bi-subtitle">
           Modélisation des données — Schéma en étoile
         </h4>
 
         <p>
-          Présentation de la préparation des données,
-          du modèle retenu et des relations
-          entre les tables.
+          Présentation du modèle de données
+          et des relations entre les tables.
         </p>
 
         <a
           href="futur-schema.png"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
+
           <img
             src="futur-schema.png"
-            alt="Schéma de données du futur projet"
+            alt="Schéma en étoile du projet 03"
             class="bi-schema-image">
         </a>
 
@@ -788,46 +699,43 @@
       -->
 
 
-      <!-- RETOUR AUX PROJETS -->
+      <!-- RETOUR VERS L'ACCUEIL -->
 
       <div class="bi-bottom">
+        <a
+          href="../#projets"
+          class="btn btn-primary"
+          data-i18n="biBack">
 
-        <a href="../#projets" class="btn btn-primary">
           ← Retour à mes projets
         </a>
-
       </div>
 
     </div>
-
   </section>
 
 
   <!-- PIED DE PAGE -->
 
   <footer class="footer">
-
     <div class="container footer-content">
 
-      <p>© Rania Fajri</p>
+      <p>© 2026 Rania Fajri</p>
 
-      <p>
+      <p data-i18n="footerText">
         Portfolio — Data Analysis &amp; Business Intelligence
       </p>
 
     </div>
-
   </footer>
 
 
   <!-- JAVASCRIPT DU CARROUSEL -->
 
   <script>
-
     const carousel = document.querySelector(".schema-carousel");
 
     if (carousel) {
-
       const viewport = carousel.querySelector(".schema-viewport");
       const track = carousel.querySelector(".schema-track");
       const slides = carousel.querySelectorAll(".schema-slide");
@@ -838,9 +746,7 @@
       let dragging = false;
       let moved = false;
 
-
       function showSlide(index) {
-
         currentSlide = (index + slides.length) % slides.length;
 
         track.style.transform =
@@ -849,11 +755,7 @@
         dots.forEach((dot, i) => {
           dot.classList.toggle("active", i === currentSlide);
         });
-
       }
-
-
-      /* FLÈCHES */
 
       carousel.querySelector(".schema-prev")
         .addEventListener("click", () => {
@@ -865,22 +767,13 @@
           showSlide(currentSlide + 1);
         });
 
-
-      /* POINTS */
-
       dots.forEach((dot, i) => {
-
         dot.addEventListener("click", () => {
           showSlide(i);
         });
-
       });
 
-
-      /* GLISSEMENT SOURIS ET TACTILE */
-
       viewport.addEventListener("pointerdown", (event) => {
-
         if (event.pointerType === "mouse" && event.button !== 0) {
           return;
         }
@@ -888,74 +781,46 @@
         startX = event.clientX;
         dragging = true;
         moved = false;
-
       });
 
-
       viewport.addEventListener("pointermove", (event) => {
-
-        if (!dragging) {
-          return;
-        }
+        if (!dragging) return;
 
         if (Math.abs(event.clientX - startX) > 10) {
           moved = true;
         }
-
       });
 
-
       viewport.addEventListener("pointerup", (event) => {
-
-        if (!dragging) {
-          return;
-        }
+        if (!dragging) return;
 
         const distance = event.clientX - startX;
-
         dragging = false;
 
         if (Math.abs(distance) > 50) {
-
-          showSlide(
-            currentSlide + (distance < 0 ? 1 : -1)
-          );
-
+          showSlide(currentSlide + (distance < 0 ? 1 : -1));
         }
-
       });
-
 
       viewport.addEventListener("pointercancel", () => {
         dragging = false;
       });
 
-
       viewport.addEventListener("dragstart", (event) => {
         event.preventDefault();
       });
 
-
-      /* EMPÊCHER L'OUVERTURE APRÈS UN GLISSEMENT */
-
       viewport.querySelectorAll("a").forEach((link) => {
-
         link.addEventListener("click", (event) => {
-
           if (moved) {
             event.preventDefault();
             moved = false;
           }
-
         });
-
       });
 
-
       showSlide(0);
-
     }
-
   </script>
 
 </body>
