@@ -100,6 +100,17 @@
         width: 100%;
       }
     }
+    /* Images des trois modèles en étoile */
+    .schema-stage {
+      display: block;
+      width: 90%;
+      max-width: 850px;
+      height: auto;
+      margin: 20px auto 35px;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+    }
+
   </style>
 </head>
 
@@ -223,24 +234,36 @@
 
       <!-- PROJET 2 -->
       <article class="bi-project">
+        
+<h3>Modélisation des données — Évolution du modèle</h3>
 
-        <h3>02 — Modélisation des données : schéma en étoile</h3>
+<p>
+Lors de mon stage, j'ai étudié plusieurs architectures de modèles
+en étoile pour analyser des données d'achats internationaux.
+La principale difficulté était de gérer différentes devises
+et des taux de change révisés chaque mois.
+</p>
 
-        <p>
-          Travail réalisé en stage autour de la modélisation
-          des données pour faciliter leur analyse et leur
-          exploitation dans Power BI.
-        </p>
+<h4>Modèle 1 — Première approche</h4>
+<img src="modele-1.jpg" alt="Premier modèle en étoile"
+     class="schema-stage">
 
-        <div class="tags">
-          <span>Power BI</span>
-          <span>Modélisation des données</span>
-          <span>Schéma en étoile</span>
-        </div>
+<h4>Modèle 2 — Modèle intermédiaire</h4>
+<img src="modele-2.jpg" alt="Deuxième modèle en étoile"
+     class="schema-stage">
 
-        <div class="bi-placeholder">
-          Visuel du schéma en étoile à ajouter.
-        </div>
+<h4>Modèle 3 — Modèle final retenu</h4>
+<img src="modele-3.jpg" alt="Modèle final en étoile"
+     class="schema-stage">
+
+<p>
+Après avoir comparé plusieurs approches, j'ai retenu et implémenté
+une architecture distinguant la dimension des devises
+(DimCurrency) et la table des taux de change (Fact_ExchangeRate).
+Ce modèle utilise également une dimension de dates commune
+pour représenter plusieurs dates métier.
+</p>
+
 
       </article>
 
