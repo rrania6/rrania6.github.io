@@ -10,6 +10,24 @@
 
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
+
+  <style>
+    /* Image du projet Bases de données */
+    .db-home-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .db-home-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  </style>
 </head>
 
 <body>
@@ -85,63 +103,77 @@
 
       <div class="projects-grid">
 
+        <!-- PROJET 1 : SKI -->
         <article class="project-card">
-         <div class="project-visual ski-visual">
-           <img
+          <div class="project-visual ski-visual">
+            <img
               src="image-1.jpg"
               alt="Paysage de montagne enneigée - Projet ski"
               style="width: 100%; height: 100%; object-fit: cover;"
             >
           </div>
+
           <div class="project-content">
             <h3 data-i18n="skiTitle">Site web sur le ski</h3>
             <p data-i18n="skiDescription">
               Développement d'un site web avec collecte
               de données par API et web scraping.
             </p>
+
             <div class="tags">
               <span>HTML</span>
               <span>CSS</span>
               <span>Python</span>
               <span>API</span>
             </div>
+
             <a href="projet_ski/" class="project-link" data-i18n="skiLink">
-            Découvrir le projet →
+              Découvrir le projet →
             </a>
           </div>
         </article>
 
+        <!-- PROJET 2 : POWER BI -->
         <article class="project-card">
           <div class="project-visual bi-visual">
-            <img src="powerbi/dashboard-stage.png" alt="Visualisation du tableau de bord Power BI réalisé en stage">
+            <img
+              src="powerbi/dashboard-stage.png"
+              alt="Visualisation du tableau de bord Power BI réalisé en stage"
+            >
           </div>
+
           <div class="project-content">
             <h3 data-i18n="biTitle">Business Intelligence</h3>
             <p data-i18n="biDescription">
               Création de rapports et tableaux de bord
               pour l'analyse et la visualisation de données.
             </p>
+
             <div class="tags">
               <span>Power BI</span>
               <span>Reporting</span>
             </div>
+
             <a href="powerbi/" class="project-link" data-i18n="biLink">
-            Découvrir le projet →
+              Découvrir le projet →
             </a>
           </div>
         </article>
 
+        <!-- PROJET 3 : CV -->
         <article class="project-card">
           <div class="project-visual cv-visual">
             <span>03</span>
             <span class="visual-icon">&lt;/&gt;</span>
           </div>
+
           <div class="project-content">
             <h3 data-i18n="cvTitle">CV en HTML & CSS</h3>
             <p data-i18n="cvDescription">
               Conception d'un CV web responsive
               avec HTML et CSS.
             </p>
+
             <div class="tags">
               <span>HTML</span>
               <span>CSS</span>
@@ -149,22 +181,33 @@
           </div>
         </article>
 
+        <!-- PROJET 4 : BASE DE DONNÉES SNOWPEAK -->
         <article class="project-card">
-          <div class="project-visual db-visual">
-            <span>04</span>
-            <span class="visual-icon">▤</span>
+          <div class="project-visual db-visual db-home-image">
+            <img
+              src="sql-acceuil.jfif"
+              alt="Illustration SQL et analyse de données - Projet SnowPeak"
+              loading="lazy"
+            >
           </div>
+
           <div class="project-content">
             <h3 data-i18n="dbTitle">Bases de données</h3>
+
             <p data-i18n="dbDescription">
               Modélisation et implémentation
               de bases de données relationnelles.
             </p>
+
             <div class="tags">
               <span>SQL</span>
               <span>MySQL</span>
               <span>Modélisation</span>
             </div>
+
+            <a href="database/" class="project-link">
+              Découvrir le projet →
+            </a>
           </div>
         </article>
 
