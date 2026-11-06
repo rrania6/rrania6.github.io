@@ -105,13 +105,26 @@
       border-bottom: none;
     }
 
-    .dictionary-link {
-      display: inline-block;
-      color: #94a3b8;
-      font-size: 12px;
-      text-decoration: none;
-      margin-top: 5px;
-    }
+ 
+.dictionary-link {
+  display: list-item;
+  width: fit-content;
+  color: #94a3b8;
+  font-size: 12px;
+  text-decoration: none;
+  margin-top: 5px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.dictionary-link::-webkit-details-marker {
+  display: none;
+}
+
+.dictionary-details[open] .dictionary-link {
+  margin-bottom: 15px;
+}
+
 
     a.dictionary-link:hover {
       color: #0755bb;
@@ -585,8 +598,6 @@
     </tbody>
   </table>
 </div>
-
-
 </details>
 
         <!-- 2. MODÉLISATION -->
