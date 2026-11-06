@@ -436,41 +436,158 @@
 
         <!-- Aperçu illustratif à adapter au vrai dictionnaire -->
 
-        <div class="dictionary-preview">
-          <table>
-            <thead>
-              <tr>
-                <th>Entité</th>
-                <th>Rôle dans la base de données</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Client</td>
-                <td>Informations relatives aux clients</td>
-              </tr>
-              <tr>
-                <td>Station</td>
-                <td>Gestion des stations de ski</td>
-              </tr>
-              <tr>
-                <td>Équipement</td>
-                <td>Matériel proposé à la location</td>
-              </tr>
-              <tr>
-                <td>Réservation</td>
-                <td>Suivi des réservations</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+<div class="dictionary-preview">
+  <table>
+    <thead>
+      <tr>
+        <th>Entité</th>
+        <th>Attribut</th>
+        <th>Type</th>
+        <th>Contrainte</th>
+        <th>Description</th>
+      </tr>
+    </thead>
 
-        <!-- Le lien sera activé après ajout du PDF -->
+    <tbody>
+      <tr>
+        <td>STATION</td>
+        <td>id_station</td>
+        <td>INT</td>
+        <td>PK, NOT NULL, AUTO_INCREMENT</td>
+        <td>Identifiant unique de la station</td>
+      </tr>
 
-        <span class="dictionary-link" data-i18n="dbDictionaryLink">
-          Voir le dictionnaire complet ↗
-        </span>
+      <tr>
+        <td>STATION</td>
+        <td>nom_station</td>
+        <td>VARCHAR(100)</td>
+        <td>NOT NULL</td>
+        <td>Nom de la station</td>
+      </tr>
 
+      <tr>
+        <td>STATION</td>
+        <td>lieu</td>
+        <td>VARCHAR(150)</td>
+        <td>NOT NULL</td>
+        <td>Localisation géographique</td>
+      </tr>
+
+      <tr>
+        <td>EQUIPEMENT</td>
+        <td>id_equipement</td>
+        <td>INT</td>
+        <td>PK, NOT NULL, AUTO_INCREMENT</td>
+        <td>Identifiant unique de l'équipement</td>
+      </tr>
+
+      <tr>
+        <td>EQUIPEMENT</td>
+        <td>type_equipement</td>
+        <td>VARCHAR(50)</td>
+        <td>NOT NULL</td>
+        <td>Type de matériel</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<details class="dictionary-details">
+  <summary class="dictionary-link">
+    Voir le dictionnaire complet ↓
+  </summary>
+
+
+<div class="dictionary-preview">
+  <table>
+    <thead>
+      <tr>
+        <th>Entité</th>
+        <th>Attribut</th>
+        <th>Type</th>
+        <th>Contrainte</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>CLIENT</td>
+        <td>id_client</td>
+        <td>INT</td>
+        <td>PK, AUTO_INCREMENT</td>
+        <td>Identifiant du client</td>
+      </tr>
+
+      <tr>
+        <td>CLIENT</td>
+        <td>nom_client</td>
+        <td>VARCHAR(32)</td>
+        <td>NOT NULL</td>
+        <td>Nom du client</td>
+      </tr>
+
+      <tr>
+        <td>CLIENT</td>
+        <td>email_client</td>
+        <td>VARCHAR(50)</td>
+        <td>NOT NULL, UNIQUE</td>
+        <td>Adresse e-mail du client</td>
+      </tr>
+
+      <tr>
+        <td>EQUIPEMENT</td>
+        <td>taille</td>
+        <td>VARCHAR(20)</td>
+        <td>NOT NULL</td>
+        <td>Taille de l'équipement</td>
+      </tr>
+
+      <tr>
+        <td>EQUIPEMENT</td>
+        <td>disponibilite</td>
+        <td>BOOLEAN</td>
+        <td>NOT NULL</td>
+        <td>Disponibilité du matériel</td>
+      </tr>
+
+      <tr>
+        <td>EQUIPEMENT</td>
+        <td>prix_jour_base</td>
+        <td>DECIMAL(10,2)</td>
+        <td>NOT NULL</td>
+        <td>Prix journalier de base</td>
+      </tr>
+
+      <tr>
+        <td>RESERVATION</td>
+        <td>id_reservation</td>
+        <td>INT</td>
+        <td>PK, AUTO_INCREMENT</td>
+        <td>Identifiant de la réservation</td>
+      </tr>
+
+      <tr>
+        <td>RESERVATION</td>
+        <td>date_debut</td>
+        <td>DATE</td>
+        <td>NOT NULL</td>
+        <td>Date de début</td>
+      </tr>
+
+      <tr>
+        <td>RESERVATION</td>
+        <td>date_fin</td>
+        <td>DATE</td>
+        <td>NOT NULL, CHECK</td>
+        <td>Date de fin, après la date de début</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+</details>
 
         <!-- 2. MODÉLISATION -->
 
