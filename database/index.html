@@ -1,248 +1,198 @@
 
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Projet SnowPeak | Rania Fajri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projet SnowPeak | Portfolio</title>
 
   <link rel="stylesheet" href="../style.css">
   <script src="../script.js" defer></script>
 
   <style>
-    /* INTRODUCTION */
-
-    .bi-intro {
-      padding: 90px 0 65px;
+    .db-intro {
+      padding: 85px 20px 60px;
       text-align: center;
     }
 
-    .bi-intro h1 {
-      font-size: clamp(32px, 4vw, 46px);
-      letter-spacing: -1.5px;
-      line-height: 1.2;
-      margin-bottom: 20px;
+    .db-intro h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      margin: 15px 0;
     }
 
-    .bi-intro h1 span {
-      color: var(--blue, #0755bb);
+    .db-intro h1 span { color: #0755bb; }
+
+    .db-intro p {
+      max-width: 720px;
+      margin: auto;
+      color: #64748b;
+      line-height: 1.8;
     }
 
-    .bi-intro p {
-      max-width: 700px;
-      margin: 0 auto;
-      color: var(--text, #475569);
-      font-size: 17px;
-      line-height: 1.7;
-    }
-
-    /* ENCADRÉ PRINCIPAL */
-
-    .bi-project {
+    .db-card {
       background: white;
-      border: 1px solid var(--border, #e5e7eb);
-      border-radius: 16px;
-      padding: 32px;
-      margin-bottom: 28px;
-      box-shadow: 0 4px 16px rgba(17, 24, 39, 0.035);
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 35px;
+      margin: 30px 0;
+      box-shadow: 0 5px 20px #0f172a08;
     }
 
-    .bi-project h3 {
-      font-size: 23px;
-      margin-bottom: 15px;
-    }
-
-    .bi-project p {
-      color: var(--text, #475569);
-      font-size: 15px;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    /* SOUS-TITRES AVEC TRAIT ORANGE */
-
-    .bi-subtitle {
-      font-size: 16px;
-      font-weight: 600;
-      color: #1f2937;
-      border-left: 4px solid #f47b36;
-      padding-left: 12px;
-      margin-top: 38px;
+    .db-card h3 {
+      font-size: 24px;
       margin-bottom: 18px;
-      line-height: 1.5;
     }
 
-    /* DICTIONNAIRE DES DONNÉES */
+    .db-card p {
+      line-height: 1.8;
+      color: #475569;
+    }
+
+    .db-subtitle {
+      border-left: 4px solid #f47b36;
+      padding-left: 13px;
+      font-size: 18px;
+      margin: 45px 0 18px;
+      color: #1e293b;
+    }
+
+    /* DICTIONNAIRE */
 
     .dictionary-preview {
       overflow-x: auto;
-      border: 1px solid #e7eaf0;
+      border: 1px solid #e2e8f0;
       border-radius: 12px;
-      margin: 22px 0 14px;
+      margin: 20px 0 12px;
     }
 
     .dictionary-preview table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 14px;
+      font-size: 13px;
       text-align: left;
     }
 
     .dictionary-preview th,
     .dictionary-preview td {
-      padding: 13px 16px;
-      border-bottom: 1px solid #e7eaf0;
+      padding: 12px;
+      border-bottom: 1px solid #e2e8f0;
     }
 
     .dictionary-preview th {
-      background: #f8fafc;
-      color: #334155;
-    }
-
-    .dictionary-preview tr:last-child td {
-      border-bottom: none;
+      background: #f1f5f9;
     }
 
     .dictionary-link {
-      display: inline-block;
+      background: none;
+      border: none;
+      padding: 5px 0;
       color: #94a3b8;
       font-size: 12px;
-      text-decoration: none;
-      margin-top: 5px;
+      cursor: pointer;
     }
 
-    a.dictionary-link:hover {
+    .dictionary-link:hover {
       color: #0755bb;
       text-decoration: underline;
     }
 
-    /* CARROUSEL DES MODÈLES */
+    /* CARROUSELS */
 
-    .schema-carousel {
-      position: relative;
-      width: 75%;
-      max-width: 750px;
+    .db-carousel {
+      width: 90%;
+      max-width: 900px;
       margin: 30px auto;
+      position: relative;
       text-align: center;
-      min-width: 0;
     }
 
-    .schema-viewport {
+    .db-viewport {
       width: 100%;
       overflow: hidden;
       touch-action: pan-y;
-      cursor: grab;
     }
 
-    .schema-viewport:active {
-      cursor: grabbing;
-    }
-
-    .schema-track {
+    .db-track {
       display: flex;
-      width: 100%;
-      transition: transform 0.4s ease;
+      transition: transform .35s ease;
     }
 
-    .schema-slide {
+    .db-slide {
       flex: 0 0 100%;
-      width: 100%;
       min-width: 0;
-      box-sizing: border-box;
     }
 
-    .schema-slide h4 {
+    .db-slide h5 {
       font-size: 18px;
-      margin: 0 0 18px;
+      margin: 10px 0 20px;
     }
 
-    .schema-image-area {
-      width: 100%;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      box-sizing: border-box;
-    }
-
-    .schema-placeholder {
+    .db-image-button {
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      gap: 10px;
+      align-items: center;
       width: 100%;
-      height: 100%;
-      padding: 20px;
-      background: #f8fafc;
+      height: 410px;
+      padding: 12px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      cursor: zoom-in;
+    }
+
+    .db-image-button img {
+      width: 100%;
+      height: calc(100% - 25px);
+      object-fit: contain;
+    }
+
+    .db-image-button span {
       color: #94a3b8;
-      font-size: 14px;
-      text-align: center;
-      box-sizing: border-box;
+      font-size: 12px;
+      margin-top: 8px;
     }
 
-    .schema-placeholder span {
-      font-size: 32px;
-    }
-
-    .schema-description {
+    .db-description {
+      margin: 18px auto;
       max-width: 700px;
-      margin: 22px auto 10px !important;
-      text-align: center;
-      font-size: 14px !important;
-      line-height: 1.7;
-      color: #475569 !important;
+      font-size: 14px;
+      color: #64748b;
     }
 
-    .schema-arrow {
+    .db-arrow {
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 45%;
       z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 38px;
-      height: 38px;
-      padding: 0;
-      border: 1px solid #dbe4f0;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
+      border: 1px solid #dbe4f0;
       background: white;
       color: #0755bb;
-      font-size: 21px;
+      font-size: 23px;
       cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 2px 8px #00000015;
     }
 
-    .schema-prev {
-      left: -19px;
-    }
+    .db-prev { left: -20px; }
+    .db-next { right: -20px; }
 
-    .schema-next {
-      right: -19px;
-    }
-
-    .schema-arrow:hover {
+    .db-arrow:hover {
       background: #0755bb;
       color: white;
     }
 
-    .schema-dots {
+    .db-dots {
       display: flex;
       justify-content: center;
       gap: 10px;
       margin-top: 18px;
     }
 
-    .schema-dots button {
-      width: 9px;
-      height: 9px;
+    .db-dots button {
+      width: 10px;
+      height: 10px;
       padding: 0;
       border: none;
       border-radius: 50%;
@@ -250,174 +200,148 @@
       cursor: pointer;
     }
 
-    .schema-dots button.active {
+    .db-dots button.active {
       background: #0755bb;
     }
 
-    .schema-hint {
-      margin-top: 12px;
-      text-align: center;
-      font-size: 12px !important;
-      color: #94a3b8 !important;
-    }
+    /* FENÊTRES AGRANDIES */
 
-    /* FONCTIONNALITÉS SQL */
-
-    .sql-features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin: 25px 0;
-    }
-
-    .sql-feature {
-      background: #f8fafc;
-      border: 1px solid #e7eaf0;
-      border-radius: 12px;
-      padding: 20px;
-    }
-
-    .sql-feature h5 {
-      font-size: 15px;
-      color: #1f2937;
-      margin: 0 0 10px;
-    }
-
-    .sql-feature p {
-      font-size: 13px;
-      margin-bottom: 0;
-    }
-
-    .bi-bottom {
-      text-align: center;
-      margin-top: 45px;
-    }
-
-    @media (max-width: 600px) {
-      .bi-intro {
-        padding: 65px 0 45px;
-      }
-
-      .bi-project {
-        padding: 20px;
-      }
-
-      .bi-project h3 {
-        font-size: 20px;
-      }
-
-      .schema-carousel {
-        width: 100%;
-      }
-
-      .schema-image-area {
-        height: 300px;
-      }
-
-      .schema-prev {
-        left: 4px;
-      }
-
-      .schema-next {
-        right: 4px;
-      }
-
-      .sql-features {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* DICTIONNAIRE : ouverture grand format et zoom */
-    .dictionary-link {
-      display: inline-block;
-      border: 0;
-      background: transparent;
-      padding: 0;
-      color: #94a3b8;
-      font: inherit;
-      font-size: 12px;
-      cursor: pointer;
-      margin-top: 5px;
-      text-align: left;
-    }
-    .dictionary-link:hover { color: #0755bb; text-decoration: underline; }
-    .dictionary-dialog {
-      position: fixed;
-      inset: 0;
+    .db-dialog {
       width: min(96vw, 1500px);
       height: min(94vh, 1000px);
       max-width: none;
       max-height: none;
-      margin: auto;
       padding: 0;
-      border: 1px solid #dbe4f0;
-      border-radius: 16px;
+      border: none;
+      border-radius: 15px;
       background: white;
-      color: #1f2937;
-      box-shadow: 0 20px 80px rgba(15,23,42,.25);
+      color: #1e293b;
       overflow: hidden;
     }
-    .dictionary-dialog::backdrop { background: rgba(15,23,42,.72); }
-    .dictionary-dialog[open] { display: flex; flex-direction: column; }
-    .dictionary-dialog-header {
+
+    .db-dialog[open] {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .db-dialog::backdrop {
+      background: #0f172ad9;
+    }
+
+    .db-dialog-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
       gap: 12px;
-      padding: 18px 24px;
-      border-bottom: 1px solid #e7eaf0;
-      background: #fff;
+      padding: 15px 20px;
+      border-bottom: 1px solid #e2e8f0;
     }
-    .dictionary-dialog-header h2 { font-size: 20px; margin: 0 0 5px; }
-    .dictionary-dialog-header p { font-size: 12px; margin: 0; color: #64748b; }
-    .dictionary-controls { display: flex; gap: 9px; align-items: center; }
-    .dictionary-controls button {
-      background: #f8fafc;
-      border: 1px solid #dbe4f0;
-      border-radius: 8px;
-      min-width: 36px;
+
+    .db-dialog-header h3 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .db-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .db-controls button {
+      width: 36px;
       height: 36px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: #f8fafc;
       cursor: pointer;
-      color: #1f2937;
-      font-size: 17px;
+      font-size: 18px;
     }
-    .dictionary-controls button:hover { background: #eaf2ff; }
-    .dictionary-controls span { min-width: 48px; text-align: center; font-size: 12px; }
-    .dictionary-controls .dictionary-close { margin-left: 6px; }
-    .dictionary-scroll { overflow: auto; flex: 1; min-height: 0; }
-    .dictionary-zoom-area { width: max-content; min-width: 100%; zoom: 1; }
-    .dictionary-full-table {
-      border-collapse: collapse;
+
+    .db-controls span {
+      min-width: 48px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .db-dialog-body {
+      flex: 1;
+      min-height: 0;
+      overflow: auto;
+      padding: 15px;
+    }
+
+    .db-dialog-body img {
+      display: block;
       width: 100%;
+      max-width: none;
+      height: auto;
+      margin: auto;
+    }
+
+    .dictionary-zoom {
+      width: max-content;
+      min-width: 100%;
+      zoom: 1;
+    }
+
+    .dictionary-full {
+      border-collapse: collapse;
       min-width: 1050px;
+      width: 100%;
       font-size: 13px;
-      line-height: 1.45;
-    }
-    .dictionary-full-table th,
-    .dictionary-full-table td {
-      padding: 11px 13px;
-      border: 1px solid #dce5ef;
       text-align: left;
-      vertical-align: top;
-      overflow-wrap: anywhere;
     }
-    .dictionary-full-table th {
+
+    .dictionary-full th,
+    .dictionary-full td {
+      padding: 10px 13px;
+      border: 1px solid #dce5ef;
+      vertical-align: top;
+    }
+
+    .dictionary-full th {
       position: sticky;
       top: 0;
-      z-index: 1;
       background: #dceaf7;
       color: #17375e;
-      white-space: nowrap;
     }
-    .dictionary-full-table td:first-child { font-weight: 700; color: #17375e; }
-    .dictionary-full-table tbody tr:nth-child(even) { background: #f8fafc; }
-    .dictionary-full-table td:nth-child(2) { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+
+    .dictionary-full tbody tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    .dictionary-full td:first-child {
+      font-weight: bold;
+      color: #17375e;
+    }
+
+    .db-back {
+      text-align: center;
+      margin: 45px 0;
+    }
+
     @media (max-width: 600px) {
-      .dictionary-dialog { width: 100vw; height: 100dvh; border-radius: 0; }
-      .dictionary-dialog-header { padding: 12px; }
-      .dictionary-dialog-header h2 { font-size: 16px; }
-      .dictionary-full-table { min-width: 900px; }
+      .db-card { padding: 20px; }
+      .db-carousel { width: 100%; }
+      .db-image-button { height: 260px; }
+      .db-prev { left: 2px; }
+      .db-next { right: 2px; }
+
+      .db-dialog {
+        width: 100vw;
+        height: 100dvh;
+        border-radius: 0;
+      }
+
+      .db-dialog-header {
+        padding: 10px;
+        flex-wrap: wrap;
+      }
+
+      .dictionary-full {
+        min-width: 900px;
+      }
     }
   </style>
 </head>
@@ -425,7 +349,6 @@
 <body>
 
   <!-- NAVIGATION -->
-
   <header class="header">
     <nav class="nav container">
 
@@ -451,10 +374,8 @@
     </nav>
   </header>
 
-
   <!-- INTRODUCTION -->
-
-  <section class="bi-intro">
+  <section class="db-intro">
     <div class="container">
 
       <div class="hero-label">
@@ -462,11 +383,9 @@
         DATABASE DESIGN &amp; SQL
       </div>
 
-      <h1 data-i18n="dbPageTitle">
-        Projet <span>SnowPeak</span>
-      </h1>
+      <h1>Projet <span>SnowPeak</span></h1>
 
-      <p data-i18n="dbPageIntro">
+      <p>
         Conception et développement d'une base de données
         relationnelle avec MySQL pour la gestion de stations de ski.
       </p>
@@ -474,33 +393,26 @@
     </div>
   </section>
 
-
-  <!-- RÉALISATION -->
-
   <section class="section section-soft">
     <div class="container">
 
       <div class="section-heading">
-        <h2 data-i18n="dbPageSection">Mes réalisations</h2>
-        <p data-i18n="dbPageSectionIntro">
-          Projet universitaire — Bases de données relationnelles.
-        </p>
+        <h2>Mes réalisations</h2>
+        <p>Projet universitaire — Bases de données relationnelles.</p>
       </div>
 
-      <article class="bi-project">
+      <article class="db-card">
 
-        <h3 data-i18n="dbProjectTitle">
-          01 — SnowPeak : Gestion de stations de ski
-        </h3>
+        <h3>01 — SnowPeak : Gestion de stations de ski</h3>
 
-        <p data-i18n="dbProjectIntro1">
+        <p>
           Dans le cadre de mon Master, j'ai participé à la
           conception et à l'implémentation d'une base de données
           relationnelle pour SnowPeak, une entreprise fictive
           spécialisée dans la gestion de stations de ski.
         </p>
 
-        <p data-i18n="dbProjectIntro2">
+        <p>
           Réalisé en équipe, ce projet avait pour objectif de
           centraliser la gestion des clients, des équipements,
           des réservations, des cours de ski, des fournisseurs
@@ -513,439 +425,539 @@
           <span>Modélisation des données</span>
         </div>
 
+        <!-- DICTIONNAIRE DES DONNÉES -->
 
-        <!-- 1. DICTIONNAIRE DES DONNÉES -->
-        <h4 class="bi-subtitle" data-i18n="dbDictionaryTitle">Dictionnaire des données</h4>
-        <p data-i18n="dbDictionaryIntro">
-          Le dictionnaire des données décrit les attributs, les types et les contraintes
-          des 14 tables de la base SnowPeak.
+        <h4 class="db-subtitle">Dictionnaire des données</h4>
+
+        <p>
+          Le dictionnaire décrit les attributs, les types et
+          les contraintes des 14 tables de la base SnowPeak.
         </p>
 
         <div class="dictionary-preview">
           <table>
-            <thead><tr><th>Entité</th><th>Attribut</th><th>Type</th><th>Contrainte</th><th>Description</th></tr></thead>
+            <thead>
+              <tr>
+                <th>Entité</th>
+                <th>Attribut</th>
+                <th>Type</th>
+                <th>Contrainte</th>
+                <th>Description</th>
+              </tr>
+            </thead>
             <tbody>
-              <tr><td>STATION</td><td>id_station</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique de la station</td></tr>
-              <tr><td>STATION</td><td>nom_station</td><td>VARCHAR(100)</td><td>NOT NULL</td><td>Nom de la station (ex. : Les Arcs)</td></tr>
-              <tr><td>STATION</td><td>lieu</td><td>VARCHAR(150)</td><td>NOT NULL</td><td>Localisation géographique</td></tr>
-              <tr><td>EQUIPEMENT</td><td>id_equipement</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique de l’équipement</td></tr>
-              <tr><td>EQUIPEMENT</td><td>type_equipement</td><td>VARCHAR(50)</td><td>NOT NULL</td><td>Type de matériel</td></tr>
+              <tr>
+                <td>STATION</td>
+                <td>id_station</td>
+                <td>INT</td>
+                <td>PK, AUTO_INCREMENT</td>
+                <td>Identifiant de la station</td>
+              </tr>
+              <tr>
+                <td>STATION</td>
+                <td>nom_station</td>
+                <td>VARCHAR(100)</td>
+                <td>NOT NULL</td>
+                <td>Nom de la station</td>
+              </tr>
+              <tr>
+                <td>STATION</td>
+                <td>lieu</td>
+                <td>VARCHAR(150)</td>
+                <td>NOT NULL</td>
+                <td>Localisation</td>
+              </tr>
             </tbody>
           </table>
         </div>
-        <button type="button" class="dictionary-link" id="open-dictionary">
+
+        <button class="dictionary-link" id="open-dictionary" type="button">
           Voir le dictionnaire complet ↗
         </button>
 
-        <!-- Fenêtre grand format : dictionnaire intégral -->
-        <dialog id="dictionary-dialog" class="dictionary-dialog" aria-labelledby="dictionary-title">
-          <div class="dictionary-dialog-header">
-            <div>
-              <h2 id="dictionary-title">Dictionnaire des données — SnowPeak</h2>
-              <p>14 tables · 77 attributs </p>
-            </div>
-            <div class="dictionary-controls">
-              <button type="button" id="dictionary-minus" aria-label="Réduire le zoom">−</button>
-              <span id="dictionary-zoom-label">100 %</span>
-              <button type="button" id="dictionary-plus" aria-label="Augmenter le zoom">+</button>
-              <button type="button" id="dictionary-close" class="dictionary-close" aria-label="Fermer le dictionnaire">✕</button>
-            </div>
-          </div>
-          <div class="dictionary-scroll">
-            <div class="dictionary-zoom-area" id="dictionary-zoom-area">
-              <table class="dictionary-full-table">
-                <thead><tr><th>Entité</th><th>Attribut</th><th>Type</th><th>Contrainte</th><th>Description</th></tr></thead>
-                <tbody>
-              <tr><td>STATION</td><td>id_station</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique de la station</td></tr>
-              <tr><td></td><td>nom_station</td><td>VARCHAR(100)</td><td>NOT NULL</td><td>Nom de la station (ex. : Les Arcs)</td></tr>
-              <tr><td></td><td>lieu</td><td>VARCHAR(150)</td><td>NOT NULL</td><td>Localisation géographique</td></tr>
-              <tr><td>EQUIPEMENT</td><td>id_equipement</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique de l’équipement</td></tr>
-              <tr><td></td><td>type_equipement</td><td>VARCHAR(50)</td><td>NOT NULL</td><td>Type de matériel</td></tr>
-              <tr><td></td><td>taille</td><td>VARCHAR(20)</td><td>NOT NULL</td><td>Taille de l’équipement (ex. : 160 cm, Enfant, Unique)</td></tr>
-              <tr><td></td><td>etat</td><td>ENUM(&#x27;Neuf&#x27;, &#x27;Bon état&#x27;, &#x27;Usagé&#x27;, &#x27;En réparation&#x27;)</td><td>NOT NULL, DEFAULT &#x27;Neuf&#x27;</td><td>État de l’équipement</td></tr>
-              <tr><td></td><td>niveau_requis</td><td>ENUM(&#x27;Débutant&#x27;, &#x27;Intermédiaire&#x27;, &#x27;Expert&#x27;)</td><td>NOT NULL</td><td>Niveau requis</td></tr>
-              <tr><td></td><td>disponibilite</td><td>BOOLEAN</td><td>NOT NULL</td><td>1 : disponible ; 0 : loué</td></tr>
-              <tr><td></td><td>prix_jour_base</td><td>DECIMAL(10,2)</td><td>NOT NULL</td><td>Tarif journalier de base</td></tr>
-              <tr><td></td><td>id_station</td><td>INT</td><td>FK, NOT NULL</td><td>Station où se trouve le stock</td></tr>
-              <tr><td>CLIENT</td><td>id_client</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique du client</td></tr>
-              <tr><td></td><td>nom_client</td><td>VARCHAR(32)</td><td>NOT NULL</td><td>Nom de famille du client</td></tr>
-              <tr><td></td><td>prenom_client</td><td>VARCHAR(32)</td><td>NOT NULL</td><td>Prénom du client</td></tr>
-              <tr><td></td><td>date_naissance_client</td><td>DATE</td><td>NOT NULL</td><td>Date de naissance du client (calcul du tarif selon l’âge)</td></tr>
-              <tr><td></td><td>telephone_client</td><td>VARCHAR(20)</td><td>NOT NULL</td><td>Numéro de téléphone du client</td></tr>
-              <tr><td></td><td>email_client</td><td>VARCHAR(50)</td><td>NOT NULL, UNIQUE</td><td>Adresse e-mail du client</td></tr>
-              <tr><td>COURS</td><td>id_cours</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique du cours</td></tr>
-              <tr><td></td><td>libelle</td><td>VARCHAR(150)</td><td>NOT NULL</td><td>Nom du cours (ex. : Initiation ski alpin)</td></tr>
-              <tr><td></td><td>niveau_cours</td><td>ENUM(&#x27;Débutant&#x27;, &#x27;Intermédiaire&#x27;, &#x27;Expert&#x27;)</td><td>NOT NULL</td><td>Niveau du cours</td></tr>
-              <tr><td></td><td>tarif_cours</td><td>DECIMAL(10,2)</td><td>NOT NULL, CHECK &gt; 0</td><td>Prix du cours en euros</td></tr>
-              <tr><td></td><td>duree</td><td>INT</td><td>NOT NULL</td><td>Durée du cours en heures</td></tr>
-              <tr><td></td><td>capacite_max</td><td>INT</td><td>NOT NULL</td><td>Nombre maximum de participants</td></tr>
-              <tr><td></td><td>id_station</td><td>INT</td><td>FK, NOT NULL</td><td>Station qui propose le cours</td></tr>
-              <tr><td></td><td>id_employe</td><td>INT</td><td>FK, NOT NULL</td><td>Employé qui encadre le cours</td></tr>
-              <tr><td>EMPLOYE</td><td>id_employe</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique de l’employé</td></tr>
-              <tr><td></td><td>nom_employe</td><td>VARCHAR(32)</td><td>NOT NULL</td><td>Nom de famille de l’employé</td></tr>
-              <tr><td></td><td>prenom_employe</td><td>VARCHAR(32)</td><td>NOT NULL</td><td>Prénom de l’employé</td></tr>
-              <tr><td></td><td>role_employe</td><td>ENUM(&#x27;Moniteur&#x27;, &#x27;Technicien&#x27;, &#x27;Administratif&#x27;)</td><td>NOT NULL</td><td>Rôle de l’employé</td></tr>
-              <tr><td></td><td>email_employe</td><td>VARCHAR(50)</td><td>NOT NULL</td><td>Adresse e-mail de l’employé</td></tr>
-              <tr><td></td><td>telephone_employe</td><td>VARCHAR(20)</td><td>NOT NULL</td><td>Numéro de téléphone de l’employé</td></tr>
-              <tr><td></td><td>id_station</td><td>INT</td><td>FK, NOT NULL</td><td>Station où travaille l’employé</td></tr>
-              <tr><td>HORAIRE</td><td>id_horaire</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique de l’horaire</td></tr>
-              <tr><td></td><td>jour</td><td>ENUM(&#x27;Lundi&#x27;, &#x27;Mardi&#x27;, &#x27;Mercredi&#x27;, &#x27;Jeudi&#x27;, &#x27;Vendredi&#x27;, &#x27;Samedi&#x27;, &#x27;Dimanche&#x27;)</td><td>NOT NULL</td><td>Jour de travail de l’employé</td></tr>
-              <tr><td></td><td>heure_debut</td><td>TIME</td><td>NOT NULL</td><td>Heure de début de travail</td></tr>
-              <tr><td></td><td>heure_fin</td><td>TIME</td><td>NOT NULL</td><td>Heure de fin de travail</td></tr>
-              <tr><td></td><td>id_employe</td><td>INT</td><td>FK, NOT NULL</td><td>Employé concerné par l’horaire de travail</td></tr>
-              <tr><td>FOURNISSEUR</td><td>id_fournisseur</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique du fournisseur</td></tr>
-              <tr><td></td><td>nom_fournisseur</td><td>VARCHAR(32)</td><td>NOT NULL</td><td>Nom du fournisseur</td></tr>
-              <tr><td></td><td>type_service</td><td>ENUM(&#x27;Maintenance équipements&#x27;, &#x27;Assurance/Assistance&#x27;)</td><td>NOT NULL</td><td>Type de service proposé par le fournisseur</td></tr>
-              <tr><td></td><td>email_fournisseur</td><td>VARCHAR(50)</td><td>NOT NULL</td><td>Adresse e-mail du fournisseur</td></tr>
-              <tr><td></td><td>telephone_fournisseur</td><td>VARCHAR(20)</td><td>NOT NULL</td><td>Numéro de téléphone du fournisseur</td></tr>
-              <tr><td>RESERVATION</td><td>id_reservation</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique de la réservation</td></tr>
-              <tr><td></td><td>date_debut</td><td>DATE</td><td>NOT NULL</td><td>Date de début de la réservation</td></tr>
-              <tr><td></td><td>date_fin</td><td>DATE</td><td>NOT NULL, CHECK &gt; date_debut</td><td>Date de fin de la réservation</td></tr>
-              <tr><td></td><td>statut</td><td>ENUM(&#x27;En cours&#x27;, &#x27;Terminée&#x27;, &#x27;Annulée&#x27;)</td><td>NOT NULL, DEFAULT &#x27;En cours&#x27;</td><td>Statut de la réservation</td></tr>
-              <tr><td></td><td>id_client</td><td>INT</td><td>FK, NOT NULL</td><td>Client ayant effectué la réservation</td></tr>
-              <tr><td></td><td>id_station</td><td>INT</td><td>FK, NOT NULL</td><td>Station de la réservation</td></tr>
-              <tr><td>FACTURE_CLIENT</td><td>id_facture_client</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique de la facture client</td></tr>
-              <tr><td></td><td>montant_total</td><td>DECIMAL(10,2)</td><td>NOT NULL, CHECK &gt; 0</td><td>Montant total TTC en euros</td></tr>
-              <tr><td></td><td>date_emission</td><td>DATETIME</td><td>NOT NULL</td><td>Date et heure d’émission de la facture</td></tr>
-              <tr><td></td><td>statut</td><td>BOOLEAN</td><td>NOT NULL, DEFAULT 0</td><td>Statut de paiement (1 : payée ; 0 : non)</td></tr>
-              <tr><td></td><td>mode_paiement</td><td>ENUM(&#x27;Carte bancaire&#x27;, &#x27;Espèces&#x27;, &#x27;Virement&#x27;, &#x27;Chèque&#x27;)</td><td>NOT NULL</td><td>Mode de paiement</td></tr>
-              <tr><td></td><td>id_reservation</td><td>INT</td><td>FK</td><td>Réservation associée à la facture</td></tr>
-              <tr><td>FACTURE_FOURNISSEUR</td><td>id_facture_fournisseur</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique de la facture fournisseur</td></tr>
-              <tr><td></td><td>montant_total</td><td>DECIMAL(10,2)</td><td>NOT NULL, CHECK &gt; 0</td><td>Montant total TTC en euros</td></tr>
-              <tr><td></td><td>date_emission</td><td>DATETIME</td><td>NOT NULL</td><td>Date et heure d’émission de la facture</td></tr>
-              <tr><td></td><td>statut</td><td>BOOLEAN</td><td>NOT NULL, DEFAULT 0</td><td>Statut de paiement (1 : payée ; 0 : non)</td></tr>
-              <tr><td></td><td>mode_paiement</td><td>ENUM(&#x27;Virement&#x27;, &#x27;Chèque&#x27;)</td><td>NOT NULL</td><td>Mode de paiement</td></tr>
-              <tr><td></td><td>id_fournisseur</td><td>INT</td><td>FK</td><td>Fournisseur ayant émis la facture</td></tr>
-              <tr><td></td><td>id_station</td><td>INT</td><td>FK</td><td>Station concernée par la facture</td></tr>
-              <tr><td>SERVICE</td><td>id_service</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique du service</td></tr>
-              <tr><td></td><td>type_service</td><td>ENUM(&#x27;Assurance Neige&#x27;, &#x27;Assistance Piste&#x27;)</td><td>NOT NULL</td><td>Type de service proposé par la station</td></tr>
-              <tr><td></td><td>prix_service</td><td>DECIMAL(10,2)</td><td>NOT NULL, CHECK &gt; 0</td><td>Prix du service en euros</td></tr>
-              <tr><td>SOUSCRIPTION_SERVICE</td><td>id_reservation</td><td>INT</td><td>FK, NOT NULL (PK composée)</td><td>Clé étrangère vers RESERVATION (PK composée)</td></tr>
-              <tr><td></td><td>id_service</td><td>INT</td><td>FK, NOT NULL (PK composée)</td><td>Clé étrangère vers SERVICE (PK composée)</td></tr>
-              <tr><td></td><td>date_souscription</td><td>DATE</td><td>NOT NULL</td><td>Date de souscription au service</td></tr>
-              <tr><td></td><td>montant</td><td>DECIMAL(10,2)</td><td>NOT NULL</td><td>Montant total payé pour le service en euros</td></tr>
-              <tr><td>INSCRIPTION_COURS</td><td>id_reservation</td><td>INT</td><td>FK, NOT NULL (PK composée)</td><td>Clé étrangère vers RESERVATION (PK composée)</td></tr>
-              <tr><td></td><td>id_cours</td><td>INT</td><td>FK, NOT NULL (PK composée)</td><td>Clé étrangère vers COURS (PK composée)</td></tr>
-              <tr><td></td><td>nb_participants</td><td>INT</td><td>NOT NULL, CHECK &gt; 0</td><td>Nombre de participants au cours</td></tr>
-              <tr><td></td><td>statut_inscription</td><td>ENUM(&#x27;Confirmé&#x27;, &#x27;En attente&#x27;, &#x27;Annulé&#x27;)</td><td>NOT NULL</td><td>Statut de l’inscription</td></tr>
-              <tr><td>LOCATION_EQUIPEMENT</td><td>id_reservation</td><td>INT</td><td>FK, NOT NULL (PK composée)</td><td>Clé étrangère vers RESERVATION (PK composée)</td></tr>
-              <tr><td></td><td>id_equipement</td><td>INT</td><td>FK, NOT NULL (PK composée)</td><td>Clé étrangère vers EQUIPEMENT (PK composée)</td></tr>
-              <tr><td></td><td>date_debut_location</td><td>DATE</td><td>NOT NULL</td><td>Date de début de la location</td></tr>
-              <tr><td></td><td>date_fin_location</td><td>DATE</td><td>NOT NULL</td><td>Date de fin de la location</td></tr>
-              <tr><td></td><td>prix_applique</td><td>DECIMAL(10,2)</td><td>NOT NULL</td><td>Prix facturé au moment de la location</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </dialog>
+        <!-- MODÉLISATION -->
 
-        <!-- 2. MODÉLISATION -->
-
-        <h4 class="bi-subtitle" data-i18n="dbModelTitle">
+        <h4 class="db-subtitle">
           Modélisation de la base de données
         </h4>
 
-        <p data-i18n="dbModelIntro">
-          La conception de SnowPeak repose sur trois étapes
-          complémentaires : le modèle entité-association,
-          le modèle logique de données et le diagramme EER
-          généré avec MySQL.
+        <p>
+          La conception repose sur trois étapes complémentaires :
+          le modèle entité-association, le modèle logique de données
+          et le diagramme EER réalisé sous MySQL Workbench.
         </p>
 
-        <div class="schema-carousel">
+        <div class="db-carousel">
 
-          <button
-            class="schema-arrow schema-prev"
-            type="button"
-            aria-label="Modèle précédent">
-            &#10094;
-          </button>
+          <button class="db-arrow db-prev" type="button"
+                  aria-label="Image précédente">❮</button>
 
-          <div class="schema-viewport">
-            <div class="schema-track">
+          <div class="db-viewport">
+            <div class="db-track">
 
-              <!-- MODÈLE 1 : MEA -->
+              <div class="db-slide">
+                <h5>Modèle 1 — Entité-association</h5>
 
-              <div class="schema-slide">
+                <button class="db-image-button" type="button"
+                        data-image="images/modele1_sql.png"
+                        data-title="Modèle entité-association">
 
-                <h4 data-i18n="dbModel1Title">
-                  Modèle 1 — Entité-association
-                </h4>
+                  <img src="images/modele1_sql.png"
+                       alt="Modèle entité-association SnowPeak">
 
-                <div class="schema-image-area">
-                  <div class="schema-placeholder">
-                    <span>◇</span>
-                    Capture du modèle entité-association
-                    à ajouter
-                  </div>
-                </div>
+                  <span>Cliquer pour agrandir ↗</span>
+                </button>
 
-                <p class="schema-description"
-                   data-i18n="dbModel1Description">
-                  Identification des entités, de leurs attributs
-                  et des associations nécessaires à la
-                  représentation du fonctionnement de SnowPeak.
+                <p class="db-description">
+                  Représentation des entités, de leurs attributs
+                  et des associations entre elles.
                 </p>
-
               </div>
 
+              <div class="db-slide">
+                <h5>Modèle 2 — Modèle logique de données</h5>
 
-              <!-- MODÈLE 2 : MLD -->
+                <button class="db-image-button" type="button"
+                        data-image="images/modele2_sql.PNG"
+                        data-title="Modèle logique de données">
 
-              <div class="schema-slide">
+                  <img src="images/modele2_sql.PNG"
+                       alt="Modèle logique de données SnowPeak">
 
-                <h4 data-i18n="dbModel2Title">
-                  Modèle 2 — Modèle logique de données
-                </h4>
+                  <span>Cliquer pour agrandir ↗</span>
+                </button>
 
-                <div class="schema-image-area">
-                  <div class="schema-placeholder">
-                    <span>▤</span>
-                    Capture du modèle logique
-                    à ajouter
-                  </div>
-                </div>
-
-                <p class="schema-description"
-                   data-i18n="dbModel2Description">
-                  Transformation du modèle entité-association
-                  en schéma relationnel, avec définition
-                  des tables et des clés primaires
-                  et étrangères.
+                <p class="db-description">
+                  Transformation du modèle conceptuel en tables,
+                  avec clés primaires et clés étrangères.
                 </p>
-
               </div>
 
+              <div class="db-slide">
+                <h5>Modèle 3 — Diagramme EER MySQL</h5>
 
-              <!-- MODÈLE 3 : EER -->
+                <button class="db-image-button" type="button"
+                        data-image="images/modele3_sql.png"
+                        data-title="Diagramme EER MySQL">
 
-              <div class="schema-slide">
+                  <img src="images/modele3_sql.png"
+                       alt="Diagramme EER MySQL SnowPeak">
 
-                <h4 data-i18n="dbModel3Title">
-                  Modèle 3 — Diagramme EER MySQL
-                </h4>
+                  <span>Cliquer pour agrandir ↗</span>
+                </button>
 
-                <div class="schema-image-area">
-                  <div class="schema-placeholder">
-                    <span>▦</span>
-                    Capture du diagramme EER
-                    à ajouter
-                  </div>
-                </div>
-
-                <p class="schema-description"
-                   data-i18n="dbModel3Description">
-                  Visualisation de la structure relationnelle
-                  implémentée dans MySQL et des liens
-                  entre les différentes tables.
+                <p class="db-description">
+                  Visualisation des tables et de leurs relations
+                  dans MySQL Workbench.
                 </p>
-
               </div>
 
             </div>
           </div>
 
-          <button
-            class="schema-arrow schema-next"
-            type="button"
-            aria-label="Modèle suivant">
-            &#10095;
-          </button>
+          <button class="db-arrow db-next" type="button"
+                  aria-label="Image suivante">❯</button>
 
-          <div class="schema-dots">
-            <button class="active" type="button"
-                    aria-label="Afficher le modèle 1"></button>
-            <button type="button"
-                    aria-label="Afficher le modèle 2"></button>
-            <button type="button"
-                    aria-label="Afficher le modèle 3"></button>
-          </div>
-
-          <p class="schema-hint" data-i18n="dbCarouselHint">
-            Faites glisser pour changer de modèle.
-          </p>
+          <div class="db-dots"></div>
 
         </div>
 
+        <!-- IMPLÉMENTATION ET FONCTIONNALITÉS SQL -->
 
-        <!-- 3. IMPLÉMENTATION SQL -->
-
-        <h4 class="bi-subtitle" data-i18n="dbSqlTitle">
-          Implémentation SQL
+        <h4 class="db-subtitle">
+          Implémentation SQL et fonctionnalités avancées
         </h4>
 
-        <p data-i18n="dbSqlIntro">
-          Après la phase de modélisation, la base de données
-          a été implémentée sous MySQL. Les scripts SQL
-          permettent de créer les tables, de définir les
-          contraintes d'intégrité et d'insérer des données
-          de test afin de vérifier le fonctionnement
-          de la base.
+        <p>
+          Après la modélisation, la base SnowPeak a été implémentée
+          sous MySQL. Voici trois exemples : la création d'une table,
+          l'automatisation avec un trigger et la création d'une vue SQL.
         </p>
 
+        <div class="db-carousel">
 
-        <!-- 4. FONCTIONNALITÉS AVANCÉES -->
+          <button class="db-arrow db-prev" type="button"
+                  aria-label="Image précédente">❮</button>
 
-        <h4 class="bi-subtitle" data-i18n="dbAdvancedTitle">
-          Fonctionnalités SQL avancées
-        </h4>
+          <div class="db-viewport">
+            <div class="db-track">
 
-        <p data-i18n="dbAdvancedIntro">
-          Des fonctionnalités avancées ont été développées
-          pour faciliter l'exploitation des données
-          et automatiser certaines opérations.
-        </p>
+              <div class="db-slide">
+                <h5>Création de la table STATION</h5>
 
-        <div class="sql-features">
+                <button class="db-image-button" type="button"
+                        data-image="images/sql.PNG"
+                        data-title="Création de la table STATION">
 
-          <div class="sql-feature">
-            <h5 data-i18n="dbViewsTitle">Vues SQL</h5>
-            <p data-i18n="dbViewsText">
-              Création de vues pour faciliter
-              la consultation et l'analyse
-              des informations.
-            </p>
+                  <img src="images/sql.PNG"
+                       alt="Code SQL de création de la table station">
+
+                  <span>Cliquer pour agrandir ↗</span>
+                </button>
+
+                <p class="db-description">
+                  Création de la base SnowPeak et de la table STATION,
+                  avec une clé primaire et des contraintes NOT NULL.
+                </p>
+              </div>
+
+              <div class="db-slide">
+                <h5>Trigger — after_moniteur_insert</h5>
+
+                <button class="db-image-button" type="button"
+                        data-image="images/triggers.PNG"
+                        data-title="Trigger after_moniteur_insert">
+
+                  <img src="images/triggers.PNG"
+                       alt="Code du trigger MySQL SnowPeak">
+
+                  <span>Cliquer pour agrandir ↗</span>
+                </button>
+
+                <p class="db-description">
+                  Création automatique d'un cours lorsqu'un nouvel
+                  employé ayant le rôle « Moniteur » est ajouté.
+                </p>
+              </div>
+
+              <div class="db-slide">
+                <h5>Vue — vue_inscriptions_moniteur</h5>
+
+                <button class="db-image-button" type="button"
+                        data-image="images/view.PNG"
+                        data-title="Vue vue_inscriptions_moniteur">
+
+                  <img src="images/view.PNG"
+                       alt="Code SQL de la vue inscriptions moniteur">
+
+                  <span>Cliquer pour agrandir ↗</span>
+                </button>
+
+                <p class="db-description">
+                  Vue SQL regroupant les moniteurs, les cours,
+                  les réservations et les inscriptions.
+                </p>
+              </div>
+
+            </div>
           </div>
 
-          <div class="sql-feature">
-            <h5 data-i18n="dbTriggersTitle">
-              Déclencheurs (triggers)
-            </h5>
-            <p data-i18n="dbTriggersText">
-              Automatisation d'opérations
-              en réponse à des événements
-              sur les données.
-            </p>
-          </div>
+          <button class="db-arrow db-next" type="button"
+                  aria-label="Image suivante">❯</button>
 
-          <div class="sql-feature">
-            <h5 data-i18n="dbProceduresTitle">
-              Procédures stockées
-            </h5>
-            <p data-i18n="dbProceduresText">
-              Développement de traitements
-              SQL réutilisables pour gérer
-              certaines opérations métier.
-            </p>
-          </div>
+          <div class="db-dots"></div>
 
         </div>
 
       </article>
 
+      <!-- RETOUR À L'ACCUEIL -->
 
-      <!-- RETOUR AUX PROJETS -->
-
-      <div class="bi-bottom">
-        <a href="../#projets"
-           class="btn btn-primary"
-           data-i18n="biBack">
-          ← Retour à mes projets
+      <div class="db-back">
+        <a href="../" class="btn btn-primary">
+          ← Retour à la page d'accueil
         </a>
       </div>
 
     </div>
   </section>
 
-
   <!-- PIED DE PAGE -->
 
   <footer class="footer">
     <div class="container footer-content">
-
       <p>© 2026 Rania Fajri</p>
-
       <p data-i18n="footerText">
         Portfolio — Data Analysis &amp; Business Intelligence
       </p>
-
     </div>
   </footer>
 
+  <!-- FENÊTRE POUR AGRANDIR LES IMAGES -->
 
-  <!-- JAVASCRIPT DU CARROUSEL -->
+  <dialog id="image-dialog" class="db-dialog">
+    <div class="db-dialog-header">
+      <h3 id="image-title">Image</h3>
+
+      <div class="db-controls">
+        <button id="image-minus" type="button">−</button>
+        <span id="image-percent">100 %</span>
+        <button id="image-plus" type="button">+</button>
+        <button id="image-close" type="button">✕</button>
+      </div>
+    </div>
+
+    <div class="db-dialog-body">
+      <img id="image-large" src="" alt="Image agrandie">
+    </div>
+  </dialog>
+
+  <!-- FENÊTRE POUR LE DICTIONNAIRE -->
+
+  <dialog id="dictionary-dialog" class="db-dialog">
+
+    <div class="db-dialog-header">
+      <h3>Dictionnaire des données — SnowPeak</h3>
+
+      <div class="db-controls">
+        <button id="dictionary-minus" type="button">−</button>
+        <span id="dictionary-percent">100 %</span>
+        <button id="dictionary-plus" type="button">+</button>
+        <button id="dictionary-close" type="button">✕</button>
+      </div>
+    </div>
+
+    <div class="db-dialog-body">
+      <div class="dictionary-zoom" id="dictionary-zoom">
+        <table class="dictionary-full" id="dictionary-table">
+          <thead>
+            <tr>
+              <th>Entité</th>
+              <th>Attribut</th>
+              <th>Type</th>
+              <th>Contrainte</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+  </dialog>
 
   <script>
-    const carousel = document.querySelector(".schema-carousel");
+    /* CARROUSELS */
 
-    if (carousel) {
-      const viewport = carousel.querySelector(".schema-viewport");
-      const track = carousel.querySelector(".schema-track");
-      const slides = carousel.querySelectorAll(".schema-slide");
-      const dots = carousel.querySelectorAll(".schema-dots button");
+    document.querySelectorAll(".db-carousel").forEach(carousel => {
+      const track = carousel.querySelector(".db-track");
+      const slides = carousel.querySelectorAll(".db-slide");
+      const dots = carousel.querySelector(".db-dots");
 
-      let currentSlide = 0;
+      let current = 0;
       let startX = 0;
 
-      function showSlide(index) {
-        currentSlide = (index + slides.length) % slides.length;
+      slides.forEach((slide, index) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.setAttribute("aria-label", "Afficher l'image " + (index + 1));
+        dot.addEventListener("click", () => show(index));
+        dots.appendChild(dot);
+      });
 
-        track.style.transform =
-          "translateX(-" + (currentSlide * 100) + "%)";
+      function show(index) {
+        current = (index + slides.length) % slides.length;
+        track.style.transform = "translateX(-" + current * 100 + "%)";
 
-        dots.forEach((dot, i) => {
-          dot.classList.toggle("active", i === currentSlide);
+        dots.querySelectorAll("button").forEach((dot, i) => {
+          dot.classList.toggle("active", i === current);
         });
       }
 
-      carousel.querySelector(".schema-prev")
-        .addEventListener("click", () => {
-          showSlide(currentSlide - 1);
-        });
-
-      carousel.querySelector(".schema-next")
-        .addEventListener("click", () => {
-          showSlide(currentSlide + 1);
-        });
-
-      dots.forEach((dot, i) => {
-        dot.addEventListener("click", () => {
-          showSlide(i);
-        });
+      carousel.querySelector(".db-prev").addEventListener("click", () => {
+        show(current - 1);
       });
 
-      viewport.addEventListener("pointerdown", (event) => {
-        startX = event.clientX;
+      carousel.querySelector(".db-next").addEventListener("click", () => {
+        show(current + 1);
       });
 
-      viewport.addEventListener("pointerup", (event) => {
-        const distance = event.clientX - startX;
+      const viewport = carousel.querySelector(".db-viewport");
 
-        if (Math.abs(distance) > 50) {
-          showSlide(currentSlide + (distance < 0 ? 1 : -1));
+      viewport.addEventListener("pointerdown", e => {
+        startX = e.clientX;
+      });
+
+      viewport.addEventListener("pointerup", e => {
+        const difference = e.clientX - startX;
+        if (Math.abs(difference) > 50) {
+          show(current + (difference < 0 ? 1 : -1));
         }
       });
 
-      showSlide(0);
+      show(0);
+    });
+
+    /* AGRANDISSEMENT DES IMAGES */
+
+    const imageDialog = document.getElementById("image-dialog");
+    const imageLarge = document.getElementById("image-large");
+    const imageTitle = document.getElementById("image-title");
+    const imagePercent = document.getElementById("image-percent");
+
+    let imageZoom = 100;
+
+    function updateImageZoom() {
+      imageLarge.style.width = imageZoom + "%";
+      imagePercent.textContent = imageZoom + " %";
     }
-  </script>
 
+    document.querySelectorAll("[data-image]").forEach(button => {
+      button.addEventListener("click", () => {
+        imageLarge.src = button.dataset.image;
+        imageLarge.alt = button.dataset.title;
+        imageTitle.textContent = button.dataset.title;
 
-  <script>
-    // Dictionnaire intégral : ouverture, fermeture et zoom.
-    (() => {
-      const dialog = document.getElementById('dictionary-dialog');
-      const area = document.getElementById('dictionary-zoom-area');
-      const label = document.getElementById('dictionary-zoom-label');
-      let zoom = 100;
-      const updateZoom = () => {
-        area.style.zoom = String(zoom / 100);
-        label.textContent = zoom + ' %';
-      };
-      document.getElementById('open-dictionary').addEventListener('click', () => dialog.showModal());
-      document.getElementById('dictionary-close').addEventListener('click', () => dialog.close());
-      document.getElementById('dictionary-plus').addEventListener('click', () => {
-        zoom = Math.min(180, zoom + 20); updateZoom();
+        imageZoom = 100;
+        updateImageZoom();
+
+        imageDialog.showModal();
       });
-      document.getElementById('dictionary-minus').addEventListener('click', () => {
-        zoom = Math.max(60, zoom - 20); updateZoom();
+    });
+
+    document.getElementById("image-plus").addEventListener("click", () => {
+      imageZoom = Math.min(300, imageZoom + 25);
+      updateImageZoom();
+    });
+
+    document.getElementById("image-minus").addEventListener("click", () => {
+      imageZoom = Math.max(50, imageZoom - 25);
+      updateImageZoom();
+    });
+
+    document.getElementById("image-close").addEventListener("click", () => {
+      imageDialog.close();
+    });
+
+    /* DICTIONNAIRE DES DONNÉES */
+
+    const dictionaryData = [
+      ["STATION","id_station","INT","PK, AUTO_INCREMENT","Identifiant de la station"],
+      ["STATION","nom_station","VARCHAR(100)","NOT NULL","Nom de la station"],
+      ["STATION","lieu","VARCHAR(150)","NOT NULL","Localisation de la station"],
+
+      ["EQUIPEMENT","id_equipement","INT","PK, AUTO_INCREMENT","Identifiant de l'équipement"],
+      ["EQUIPEMENT","type_equipement","VARCHAR(50)","NOT NULL","Type d'équipement"],
+      ["EQUIPEMENT","taille","VARCHAR(20)","NOT NULL","Taille de l'équipement"],
+      ["EQUIPEMENT","etat","ENUM","NOT NULL","État de l'équipement"],
+      ["EQUIPEMENT","niveau_requis","ENUM","NOT NULL","Niveau requis"],
+      ["EQUIPEMENT","disponibilite","BOOLEAN","NOT NULL","Disponibilité du matériel"],
+      ["EQUIPEMENT","prix_jour_base","DECIMAL(10,2)","NOT NULL","Prix journalier"],
+      ["EQUIPEMENT","id_station","INT","FK","Station de rattachement"],
+
+      ["CLIENT","id_client","INT","PK, AUTO_INCREMENT","Identifiant du client"],
+      ["CLIENT","nom_client","VARCHAR(32)","NOT NULL","Nom du client"],
+      ["CLIENT","prenom_client","VARCHAR(32)","NOT NULL","Prénom du client"],
+      ["CLIENT","date_naissance_client","DATE","NOT NULL","Date de naissance"],
+      ["CLIENT","telephone_client","VARCHAR(20)","NOT NULL","Téléphone du client"],
+      ["CLIENT","email_client","VARCHAR(50)","UNIQUE","Adresse e-mail"],
+
+      ["EMPLOYE","id_employe","INT","PK, AUTO_INCREMENT","Identifiant de l'employé"],
+      ["EMPLOYE","nom_employe","VARCHAR(32)","NOT NULL","Nom de l'employé"],
+      ["EMPLOYE","prenom_employe","VARCHAR(32)","NOT NULL","Prénom de l'employé"],
+      ["EMPLOYE","role_employe","ENUM","NOT NULL","Rôle de l'employé"],
+      ["EMPLOYE","email_employe","VARCHAR(50)","NOT NULL","Adresse e-mail"],
+      ["EMPLOYE","telephone_employe","VARCHAR(20)","NOT NULL","Téléphone"],
+      ["EMPLOYE","id_station","INT","FK","Station de travail"],
+
+      ["HORAIRE","id_horaire","INT","PK, AUTO_INCREMENT","Identifiant de l'horaire"],
+      ["HORAIRE","jour","ENUM","NOT NULL","Jour de travail"],
+      ["HORAIRE","heure_debut","TIME","NOT NULL","Heure de début"],
+      ["HORAIRE","heure_fin","TIME","NOT NULL","Heure de fin"],
+      ["HORAIRE","id_employe","INT","FK","Employé concerné"],
+
+      ["FOURNISSEUR","id_fournisseur","INT","PK, AUTO_INCREMENT","Identifiant du fournisseur"],
+      ["FOURNISSEUR","nom_fournisseur","VARCHAR(32)","NOT NULL","Nom du fournisseur"],
+      ["FOURNISSEUR","type_service","ENUM","NOT NULL","Type de service"],
+      ["FOURNISSEUR","email_fournisseur","VARCHAR(50)","NOT NULL","Adresse e-mail"],
+      ["FOURNISSEUR","telephone_fournisseur","VARCHAR(20)","NOT NULL","Téléphone"],
+
+      ["COURS","id_cours","INT","PK, AUTO_INCREMENT","Identifiant du cours"],
+      ["COURS","libelle","VARCHAR(150)","NOT NULL","Nom du cours"],
+      ["COURS","niveau_cours","ENUM","NOT NULL","Niveau du cours"],
+      ["COURS","tarif_cours","DECIMAL(10,2)","NOT NULL","Tarif du cours"],
+      ["COURS","duree","INT","NOT NULL","Durée du cours"],
+      ["COURS","capacite_max","INT","NOT NULL","Capacité maximale"],
+      ["COURS","id_station","INT","FK","Station proposant le cours"],
+      ["COURS","id_employe","INT","FK","Moniteur encadrant le cours"],
+
+      ["RESERVATION","id_reservation","INT","PK, AUTO_INCREMENT","Identifiant de réservation"],
+      ["RESERVATION","date_debut","DATE","NOT NULL","Début de réservation"],
+      ["RESERVATION","date_fin","DATE","NOT NULL","Fin de réservation"],
+      ["RESERVATION","statut","ENUM","NOT NULL","Statut de réservation"],
+      ["RESERVATION","id_client","INT","FK","Client concerné"],
+      ["RESERVATION","id_station","INT","FK","Station concernée"],
+
+      ["SERVICE","id_service","INT","PK, AUTO_INCREMENT","Identifiant du service"],
+      ["SERVICE","type_service","ENUM","NOT NULL","Type de service"],
+      ["SERVICE","prix_service","DECIMAL(10,2)","NOT NULL","Prix du service"],
+
+      ["FACTURE_CLIENT","id_facture_client","INT","PK, AUTO_INCREMENT","Identifiant de facture"],
+      ["FACTURE_CLIENT","montant_total","DECIMAL(10,2)","NOT NULL","Montant total"],
+      ["FACTURE_CLIENT","date_emission","DATETIME","NOT NULL","Date d'émission"],
+      ["FACTURE_CLIENT","statut","BOOLEAN","NOT NULL","Statut du paiement"],
+      ["FACTURE_CLIENT","mode_paiement","ENUM","NOT NULL","Mode de paiement"],
+      ["FACTURE_CLIENT","id_reservation","INT","FK","Réservation facturée"],
+
+      ["FACTURE_FOURNISSEUR","id_facture_fournisseur","INT","PK, AUTO_INCREMENT","Identifiant de facture"],
+      ["FACTURE_FOURNISSEUR","montant_total","DECIMAL(10,2)","NOT NULL","Montant total"],
+      ["FACTURE_FOURNISSEUR","date_emission","DATETIME","NOT NULL","Date d'émission"],
+      ["FACTURE_FOURNISSEUR","statut","BOOLEAN","NOT NULL","Statut du paiement"],
+      ["FACTURE_FOURNISSEUR","mode_paiement","ENUM","NOT NULL","Mode de paiement"],
+      ["FACTURE_FOURNISSEUR","id_fournisseur","INT","FK","Fournisseur concerné"],
+      ["FACTURE_FOURNISSEUR","id_station","INT","FK","Station concernée"],
+
+      ["LOCATION_EQUIPEMENT","id_reservation","INT","PK composée, FK","Réservation"],
+      ["LOCATION_EQUIPEMENT","id_equipement","INT","PK composée, FK","Équipement loué"],
+      ["LOCATION_EQUIPEMENT","date_debut_location","DATE","NOT NULL","Début de location"],
+      ["LOCATION_EQUIPEMENT","date_fin_location","DATE","NOT NULL","Fin de location"],
+      ["LOCATION_EQUIPEMENT","prix_applique","DECIMAL(10,2)","NOT NULL","Prix appliqué"],
+
+      ["INSCRIPTION_COURS","id_reservation","INT","PK composée, FK","Réservation"],
+      ["INSCRIPTION_COURS","id_cours","INT","PK composée, FK","Cours choisi"],
+      ["INSCRIPTION_COURS","nb_participants","INT","NOT NULL","Nombre de participants"],
+      ["INSCRIPTION_COURS","statut_inscription","ENUM","NOT NULL","Statut d'inscription"],
+
+      ["SOUSCRIPTION_SERVICE","id_reservation","INT","PK composée, FK","Réservation"],
+      ["SOUSCRIPTION_SERVICE","id_service","INT","PK composée, FK","Service choisi"],
+      ["SOUSCRIPTION_SERVICE","date_souscription","DATE","NOT NULL","Date de souscription"],
+      ["SOUSCRIPTION_SERVICE","montant","DECIMAL(10,2)","NOT NULL","Montant payé"]
+    ];
+
+    const dictionaryBody = document.querySelector("#dictionary-table tbody");
+
+    dictionaryData.forEach(row => {
+      const tr = document.createElement("tr");
+
+      row.forEach(value => {
+        const td = document.createElement("td");
+        td.textContent = value;
+        tr.appendChild(td);
       });
-      dialog.addEventListener('click', event => {
-        if (event.target === dialog) dialog.close();
-      });
-    })();
+
+      dictionaryBody.appendChild(tr);
+    });
+
+    const dictionaryDialog = document.getElementById("dictionary-dialog");
+    const dictionaryZoomArea = document.getElementById("dictionary-zoom");
+    const dictionaryPercent = document.getElementById("dictionary-percent");
+
+    let dictionaryZoom = 100;
+
+    function updateDictionaryZoom() {
+      dictionaryZoomArea.style.zoom = dictionaryZoom / 100;
+      dictionaryPercent.textContent = dictionaryZoom + " %";
+    }
+
+    document.getElementById("open-dictionary").addEventListener("click", () => {
+      dictionaryDialog.showModal();
+    });
+
+    document.getElementById("dictionary-plus").addEventListener("click", () => {
+      dictionaryZoom = Math.min(180, dictionaryZoom + 20);
+      updateDictionaryZoom();
+    });
+
+    document.getElementById("dictionary-minus").addEventListener("click", () => {
+      dictionaryZoom = Math.max(60, dictionaryZoom - 20);
+      updateDictionaryZoom();
+    });
+
+    document.getElementById("dictionary-close").addEventListener("click", () => {
+      dictionaryDialog.close();
+    });
+
   </script>
 
 </body>
 </html>
-
