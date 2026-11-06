@@ -206,21 +206,22 @@
 
     /* FENÊTRES AGRANDIES */
 
-  .db-dialog {
-  position: fixed;
-  margin: auto;
-  inset: 0;
-  width: min(96vw, 1500px);
-  height: min(94vh, 1000px);
-  max-width: none;
-  max-height: none;
-  padding: 0;
-  border: none;
-  border-radius: 15px;
-  background: white;
-  color: #1e293b;
-  overflow: hidden;
-}
+    .db-dialog {
+      position: fixed;
+      inset: 0;
+      margin: auto;
+      width: min(96vw, 1500px);
+      height: min(94vh, 1000px);
+      max-width: none;
+      max-height: none;
+      padding: 0;
+      border: none;
+      border-radius: 15px;
+      background: white;
+      color: #1e293b;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
 
     .db-dialog[open] {
       display: flex;
@@ -238,6 +239,7 @@
       gap: 12px;
       padding: 15px 20px;
       border-bottom: 1px solid #e2e8f0;
+      flex-shrink: 0;
     }
 
     .db-dialog-header h3 {
@@ -276,7 +278,7 @@
 
     .db-dialog-body img {
       display: block;
-      width: 100%;
+      width: 70%;
       max-width: none;
       height: auto;
       margin: auto;
@@ -352,6 +354,7 @@
 <body>
 
   <!-- NAVIGATION -->
+
   <header class="header">
     <nav class="nav container">
 
@@ -378,6 +381,7 @@
   </header>
 
   <!-- INTRODUCTION -->
+
   <section class="db-intro">
     <div class="container">
 
@@ -684,7 +688,7 @@
 
       <div class="db-controls">
         <button id="image-minus" type="button">−</button>
-        <span id="image-percent">100 %</span>
+        <span id="image-percent">70 %</span>
         <button id="image-plus" type="button">+</button>
         <button id="image-close" type="button">✕</button>
       </div>
@@ -788,7 +792,7 @@
     const imageTitle = document.getElementById("image-title");
     const imagePercent = document.getElementById("image-percent");
 
-    let imageZoom = 100;
+    let imageZoom = 70;
 
     function updateImageZoom() {
       imageLarge.style.width = imageZoom + "%";
@@ -801,7 +805,7 @@
         imageLarge.alt = button.dataset.title;
         imageTitle.textContent = button.dataset.title;
 
-        imageZoom = 100;
+        imageZoom = 70;
         updateImageZoom();
 
         imageDialog.showModal();
