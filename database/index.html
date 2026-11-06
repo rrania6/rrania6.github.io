@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SnowPeak | Rania Fajri</title>
+
+  <link rel="stylesheet" href="../style.css">
+  <script src="../script.js" defer></script>
+
+  <style>
+    .bi-intro {
+      padding: 90px 0 65px;
+      text-align: center;
+    }
+
+    .bi-intro h1 {
+      font-size: clamp(32px, 4vw, 46px);
+      letter-spacing: -1.5px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .bi-intro h1 span {
+      color: var(--blue, #0755bb);
+    }
+
+    .bi-intro p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--text, #475569);
+      font-size: 17px;
+    }
+
+    .bi-project {
+      background: white;
+      border: 1px solid var(--border, #e5e7eb);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 16px rgba(17, 24, 39, 0.035);
+    }
+
+    .bi-project h3 {
+      font-size: 23px;
+      margin-bottom: 15px;
+    }
+
+    .bi-project p {
+      color: var(--text, #475569);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .bi-intro {
+        padding: 65px 0 45px;
+      }
+
+      .bi-project {
+        padding: 20px;
+      }
+
+      .bi-project h3 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header class="header">
+    <nav class="nav container">
+
+      <a href="../#accueil" class="logo">
+        Rania Fajri<span>.</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="../#accueil" data-i18n="navHome">Accueil</a>
+        <a href="../#projets" data-i18n="navProjects">Projets</a>
+        <a href="../#competences" data-i18n="navSkills">Compétences</a>
+        <a href="../#parcours" data-i18n="navExperience">Parcours</a>
+        <a href="../#apropos" data-i18n="navAbout">À propos</a>
+        <a href="../#contact" data-i18n="navContact">Contact</a>
+      </div>
+
+      <div class="language-switch">
+        <button type="button" id="lang-fr" class="active">FR</button>
+        <span>|</span>
+        <button type="button" id="lang-en">EN</button>
+      </div>
+
+    </nav>
+  </header>
+
+
+  <!-- INTRODUCTION -->
+
+  <section class="bi-intro">
+    <div class="container">
+
+      <div class="hero-label">
+        <span class="orange-line"></span>
+        DATABASE DESIGN &amp; SQL
+      </div>
+
+      <h1>
+        Projet <span>SnowPeak</span>
+      </h1>
+
+      <p>
+        Conception et développement d'une base de données
+        relationnelle avec MySQL pour la gestion de stations de ski.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- PRÉSENTATION DU PROJET -->
+
+  <section class="section section-soft">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Mes réalisations</h2>
+        <p>Projet universitaire — Bases de données relationnelles.</p>
+      </div>
+
+      <article class="bi-project">
+
+        <h3>
+          01 — SnowPeak : Gestion de stations de ski
+        </h3>
+
+        <p>
+          Dans le cadre de mon Master, j'ai participé à la
+          conception et à l'implémentation d'une base de données
+          relationnelle pour SnowPeak, une entreprise fictive
+          spécialisée dans la gestion de stations de ski.
+        </p>
+
+        <p>
+          Réalisé en équipe, ce projet avait pour objectif de
+          centraliser la gestion des clients, des équipements,
+          des réservations, des cours de ski, des fournisseurs
+          et des paiements.
+        </p>
+
+        <p>
+          Nous avons utilisé MySQL pour structurer les données
+          et développer des fonctionnalités avancées telles
+          que les vues, les déclencheurs et les procédures stockées.
+        </p>
+
+        <div class="tags">
+          <span>MySQL</span>
+          <span>SQL</span>
+          <span>Modélisation des données</span>
+        </div>
+
+      </article>
+
+      <!-- RETOUR VERS L'ACCUEIL -->
+
+      <div class="bi-bottom" style="text-align: center; margin-top: 45px;">
+        <a href="../#projets" class="btn btn-primary">
+          ← Retour à mes projets
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PIED DE PAGE -->
+
+  <footer class="footer">
+    <div class="container footer-content">
+
+      <p>© 2026 Rania Fajri</p>
+
+      <p data-i18n="footerText">
+        Portfolio — Data Analysis &amp; Business Intelligence
+      </p>
+
+    </div>
+  </footer>
+
+</body>
+</html>
