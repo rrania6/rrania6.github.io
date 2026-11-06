@@ -966,5 +966,177 @@
 
   </script>
 
+
+  <!-- Traduction FR / EN de la page SnowPeak (indépendante du script principal) -->
+  <script>
+    (() => {
+      const english = {
+      "Projet SnowPeak | Portfolio": "SnowPeak Project | Portfolio",
+      "Projet SnowPeak": "SnowPeak Project",
+      "Projet": "Project",
+      "Conception et développement d'une base de données relationnelle avec MySQL pour la gestion de stations de ski.": "Design and development of a relational database using MySQL to manage ski resorts.",
+      "Mes réalisations": "My Work",
+      "Projet universitaire — Bases de données relationnelles.": "University project — Relational databases.",
+      "01 — SnowPeak : Gestion de stations de ski": "01 — SnowPeak: Ski Resort Management",
+      "Dans le cadre de mon Master, j'ai participé à la conception et à l'implémentation d'une base de données relationnelle pour SnowPeak, une entreprise fictive spécialisée dans la gestion de stations de ski.": "As part of my Master’s degree, I contributed to the design and implementation of a relational database for SnowPeak, a fictional company specializing in ski resort management.",
+      "Réalisé en équipe, ce projet avait pour objectif de centraliser la gestion des clients, des équipements, des réservations, des cours de ski, des fournisseurs et des paiements.": "Developed as a team project, it aimed to centralize the management of customers, equipment, bookings, ski lessons, suppliers and payments.",
+      "Modélisation des données": "Data modeling",
+      "Dictionnaire des données": "Data Dictionary",
+      "Le dictionnaire décrit les attributs, les types et les contraintes des 14 tables de la base SnowPeak.": "The data dictionary describes the attributes, data types and constraints of the 14 tables in the SnowPeak database.",
+      "Entité": "Entity",
+      "Attribut": "Attribute",
+      "Type": "Type",
+      "Contrainte": "Constraint",
+      "Description": "Description",
+      "Voir le dictionnaire complet ↗": "View the full data dictionary ↗",
+      "Modélisation de la base de données": "Database Modeling",
+      "La conception repose sur trois étapes complémentaires : le modèle entité-association, le modèle logique de données et le diagramme EER réalisé sous MySQL Workbench.": "The design follows three complementary stages: the entity–relationship model, the logical data model and the EER diagram created in MySQL Workbench.",
+      "Modèle 1 — Entité-association": "Model 1 — Entity–Relationship",
+      "Modèle 2 — Modèle logique de données": "Model 2 — Logical Data Model",
+      "Modèle 3 — Diagramme EER MySQL": "Model 3 — MySQL EER Diagram",
+      "Modèle entité-association": "Entity–Relationship Model",
+      "Modèle logique de données": "Logical Data Model",
+      "Diagramme EER MySQL": "MySQL EER Diagram",
+      "Cliquer pour agrandir ↗": "Click to enlarge ↗",
+      "Représentation des entités, de leurs attributs et des associations entre elles.": "Representation of entities, their attributes and the relationships between them.",
+      "Transformation du modèle conceptuel en tables, avec clés primaires et clés étrangères.": "Conversion of the conceptual model into tables with primary and foreign keys.",
+      "Visualisation des tables et de leurs relations dans MySQL Workbench.": "Visualization of tables and their relationships in MySQL Workbench.",
+      "Implémentation SQL et fonctionnalités avancées": "SQL Implementation and Advanced Features",
+      "Après la modélisation, la base SnowPeak a été implémentée sous MySQL. Voici trois exemples : la création d'une table, l'automatisation avec un trigger et la création d'une vue SQL.": "After modeling, the SnowPeak database was implemented in MySQL. Here are three examples: creating a table, automating an action with a trigger, and creating an SQL view.",
+      "Création de la table STATION": "Creating the STATION Table",
+      "Trigger — after_moniteur_insert": "Trigger — after_moniteur_insert",
+      "Vue — vue_inscriptions_moniteur": "View — vue_inscriptions_moniteur",
+      "Trigger after_moniteur_insert": "Trigger after_moniteur_insert",
+      "Vue vue_inscriptions_moniteur": "View vue_inscriptions_moniteur",
+      "Création de la base SnowPeak et de la table STATION, avec une clé primaire et des contraintes NOT NULL.": "Creation of the SnowPeak database and the STATION table, including a primary key and NOT NULL constraints.",
+      "Création automatique d'un cours lorsqu'un nouvel employé ayant le rôle « Moniteur » est ajouté.": "Automatic creation of a lesson when a new employee with the “Instructor” role is added.",
+      "Vue SQL regroupant les moniteurs, les cours, les réservations et les inscriptions.": "SQL view combining instructors, lessons, bookings and registrations.",
+      "← Retour à la page d'accueil": "← Back to Home",
+      "Dictionnaire des données — SnowPeak": "Data Dictionary — SnowPeak",
+      "Image précédente": "Previous image",
+      "Image suivante": "Next image",
+      "Image agrandie": "Enlarged image",
+      "Identifiant de la station": "Station identifier",
+      "Nom de la station": "Station name",
+      "Localisation": "Location",
+      "Localisation de la station": "Station location",
+      "Identifiant de l'équipement": "Equipment identifier",
+      "Type d'équipement": "Equipment type",
+      "Taille de l'équipement": "Equipment size",
+      "État de l'équipement": "Equipment condition",
+      "Niveau requis": "Required skill level",
+      "Disponibilité du matériel": "Equipment availability",
+      "Prix journalier": "Daily price",
+      "Station de rattachement": "Assigned station",
+      "Identifiant du client": "Customer identifier",
+      "Nom du client": "Customer last name",
+      "Prénom du client": "Customer first name",
+      "Date de naissance": "Date of birth",
+      "Téléphone du client": "Customer phone number",
+      "Adresse e-mail": "Email address",
+      "Identifiant de l'employé": "Employee identifier",
+      "Nom de l'employé": "Employee last name",
+      "Prénom de l'employé": "Employee first name",
+      "Rôle de l'employé": "Employee role",
+      "Téléphone": "Phone number",
+      "Station de travail": "Work station",
+      "Identifiant de l'horaire": "Schedule identifier",
+      "Jour de travail": "Workday",
+      "Heure de début": "Start time",
+      "Heure de fin": "End time",
+      "Employé concerné": "Assigned employee",
+      "Identifiant du fournisseur": "Supplier identifier",
+      "Nom du fournisseur": "Supplier name",
+      "Type de service": "Service type",
+      "Identifiant du cours": "Lesson identifier",
+      "Nom du cours": "Lesson name",
+      "Niveau du cours": "Lesson level",
+      "Tarif du cours": "Lesson price",
+      "Durée du cours": "Lesson duration",
+      "Capacité maximale": "Maximum capacity",
+      "Station proposant le cours": "Station offering the lesson",
+      "Moniteur encadrant le cours": "Instructor leading the lesson",
+      "Identifiant de réservation": "Booking identifier",
+      "Début de réservation": "Booking start date",
+      "Fin de réservation": "Booking end date",
+      "Statut de réservation": "Booking status",
+      "Client concerné": "Associated customer",
+      "Station concernée": "Associated station",
+      "Identifiant du service": "Service identifier",
+      "Prix du service": "Service price",
+      "Identifiant de facture": "Invoice identifier",
+      "Montant total": "Total amount",
+      "Date d'émission": "Issue date",
+      "Statut du paiement": "Payment status",
+      "Mode de paiement": "Payment method",
+      "Réservation facturée": "Billed booking",
+      "Fournisseur concerné": "Associated supplier",
+      "Réservation": "Booking",
+      "Équipement loué": "Rented equipment",
+      "Début de location": "Rental start date",
+      "Fin de location": "Rental end date",
+      "Prix appliqué": "Applied price",
+      "Cours choisi": "Selected lesson",
+      "Nombre de participants": "Number of participants",
+      "Statut d'inscription": "Registration status",
+      "Service choisi": "Selected service",
+      "Date de souscription": "Subscription date",
+      "Montant payé": "Amount paid",
+      "PK composée, FK": "Composite PK, FK",
+      "Code SQL de création de la table station": "SQL code for creating the station table",
+      "Code du trigger MySQL SnowPeak": "SnowPeak MySQL trigger code",
+      "Code SQL de la vue inscriptions moniteur": "SQL code for the instructor registrations view",
+      "Modèle entité-association SnowPeak": "SnowPeak entity–relationship model",
+      "Modèle logique de données SnowPeak": "SnowPeak logical data model",
+      "Afficher l’image": "Show image"
+};
+      const normalize = text => text.replace(/\s+/g, ' ').trim();
+      const nodes = [];
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+          const parent = node.parentElement;
+          if (!parent || parent.closest('script, style, [data-i18n]')) return NodeFilter.FILTER_REJECT;
+          return english[normalize(node.nodeValue)] ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+        }
+      });
+      while (walker.nextNode()) {
+        const node = walker.currentNode;
+        nodes.push({ node, french: node.nodeValue, key: normalize(node.nodeValue) });
+      }
+      const attributes = [];
+      document.querySelectorAll('[data-title], [alt], [aria-label]').forEach(element => {
+        for (const attribute of ['data-title', 'alt', 'aria-label']) {
+          const original = element.getAttribute(attribute);
+          if (original && english[original]) attributes.push({ element, attribute, original });
+        }
+      });
+      const titleFR = document.title;
+      function setSnowPeakLanguage(lang) {
+        const isEnglish = lang === 'en';
+        nodes.forEach(({ node, french, key }) => {
+          node.nodeValue = isEnglish ? english[key] : french;
+        });
+        attributes.forEach(({ element, attribute, original }) => {
+          element.setAttribute(attribute, isEnglish ? english[original] : original);
+        });
+        document.title = isEnglish ? english[titleFR] : titleFR;
+        document.documentElement.lang = lang;
+        // Les boutons FR/EN et la navigation générale restent gérés par ../script.js.
+        const imageDialog = document.getElementById('image-dialog');
+        if (imageDialog.open) {
+          const imageButton = [...document.querySelectorAll('[data-image]')]
+            .find(button => button.dataset.image === document.getElementById('image-large').getAttribute('src'));
+          if (imageButton) document.getElementById('image-title').textContent = imageButton.dataset.title;
+        }
+      }
+      document.getElementById('lang-fr').addEventListener('click', () => setSnowPeakLanguage('fr'));
+      document.getElementById('lang-en').addEventListener('click', () => setSnowPeakLanguage('en'));
+      // Respecte la langue sélectionnée sur le site principal, si elle est déjà active.
+      window.addEventListener('load', () => {
+        setSnowPeakLanguage(document.getElementById('lang-en').classList.contains('active') ? 'en' : 'fr');
+      });
+    })();
+  </script>
+
 </body>
 </html>
