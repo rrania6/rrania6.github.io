@@ -6,12 +6,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>SnowPeak | Rania Fajri</title>
+  <title>Projet SnowPeak | Rania Fajri</title>
 
   <link rel="stylesheet" href="../style.css">
   <script src="../script.js" defer></script>
 
   <style>
+    /* INTRODUCTION */
+
     .bi-intro {
       padding: 90px 0 65px;
       text-align: center;
@@ -33,7 +35,10 @@
       margin: 0 auto;
       color: var(--text, #475569);
       font-size: 17px;
+      line-height: 1.7;
     }
+
+    /* ENCADRÉ PRINCIPAL */
 
     .bi-project {
       background: white;
@@ -56,6 +61,238 @@
       margin-bottom: 20px;
     }
 
+    /* SOUS-TITRES AVEC TRAIT ORANGE */
+
+    .bi-subtitle {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1f2937;
+      border-left: 4px solid #f47b36;
+      padding-left: 12px;
+      margin-top: 38px;
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    /* DICTIONNAIRE DES DONNÉES */
+
+    .dictionary-preview {
+      overflow-x: auto;
+      border: 1px solid #e7eaf0;
+      border-radius: 12px;
+      margin: 22px 0 14px;
+    }
+
+    .dictionary-preview table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .dictionary-preview th,
+    .dictionary-preview td {
+      padding: 13px 16px;
+      border-bottom: 1px solid #e7eaf0;
+    }
+
+    .dictionary-preview th {
+      background: #f8fafc;
+      color: #334155;
+    }
+
+    .dictionary-preview tr:last-child td {
+      border-bottom: none;
+    }
+
+    .dictionary-link {
+      display: inline-block;
+      color: #94a3b8;
+      font-size: 12px;
+      text-decoration: none;
+      margin-top: 5px;
+    }
+
+    a.dictionary-link:hover {
+      color: #0755bb;
+      text-decoration: underline;
+    }
+
+    /* CARROUSEL DES MODÈLES */
+
+    .schema-carousel {
+      position: relative;
+      width: 75%;
+      max-width: 750px;
+      margin: 30px auto;
+      text-align: center;
+      min-width: 0;
+    }
+
+    .schema-viewport {
+      width: 100%;
+      overflow: hidden;
+      touch-action: pan-y;
+      cursor: grab;
+    }
+
+    .schema-viewport:active {
+      cursor: grabbing;
+    }
+
+    .schema-track {
+      display: flex;
+      width: 100%;
+      transition: transform 0.4s ease;
+    }
+
+    .schema-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+
+    .schema-slide h4 {
+      font-size: 18px;
+      margin: 0 0 18px;
+    }
+
+    .schema-image-area {
+      width: 100%;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      box-sizing: border-box;
+    }
+
+    .schema-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      background: #f8fafc;
+      color: #94a3b8;
+      font-size: 14px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .schema-placeholder span {
+      font-size: 32px;
+    }
+
+    .schema-description {
+      max-width: 700px;
+      margin: 22px auto 10px !important;
+      text-align: center;
+      font-size: 14px !important;
+      line-height: 1.7;
+      color: #475569 !important;
+    }
+
+    .schema-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      padding: 0;
+      border: 1px solid #dbe4f0;
+      border-radius: 50%;
+      background: white;
+      color: #0755bb;
+      font-size: 21px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .schema-prev {
+      left: -19px;
+    }
+
+    .schema-next {
+      right: -19px;
+    }
+
+    .schema-arrow:hover {
+      background: #0755bb;
+      color: white;
+    }
+
+    .schema-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .schema-dots button {
+      width: 9px;
+      height: 9px;
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+      background: #cbd5e1;
+      cursor: pointer;
+    }
+
+    .schema-dots button.active {
+      background: #0755bb;
+    }
+
+    .schema-hint {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 12px !important;
+      color: #94a3b8 !important;
+    }
+
+    /* FONCTIONNALITÉS SQL */
+
+    .sql-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 25px 0;
+    }
+
+    .sql-feature {
+      background: #f8fafc;
+      border: 1px solid #e7eaf0;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .sql-feature h5 {
+      font-size: 15px;
+      color: #1f2937;
+      margin: 0 0 10px;
+    }
+
+    .sql-feature p {
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+
+    .bi-bottom {
+      text-align: center;
+      margin-top: 45px;
+    }
+
     @media (max-width: 600px) {
       .bi-intro {
         padding: 65px 0 45px;
@@ -67,6 +304,26 @@
 
       .bi-project h3 {
         font-size: 20px;
+      }
+
+      .schema-carousel {
+        width: 100%;
+      }
+
+      .schema-image-area {
+        height: 300px;
+      }
+
+      .schema-prev {
+        left: 4px;
+      }
+
+      .schema-next {
+        right: 4px;
+      }
+
+      .sql-features {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -112,11 +369,11 @@
         DATABASE DESIGN &amp; SQL
       </div>
 
-      <h1>
+      <h1 data-i18n="dbPageTitle">
         Projet <span>SnowPeak</span>
       </h1>
 
-      <p>
+      <p data-i18n="dbPageIntro">
         Conception et développement d'une base de données
         relationnelle avec MySQL pour la gestion de stations de ski.
       </p>
@@ -125,40 +382,36 @@
   </section>
 
 
-  <!-- PRÉSENTATION DU PROJET -->
+  <!-- RÉALISATION -->
 
   <section class="section section-soft">
     <div class="container">
 
       <div class="section-heading">
-        <h2>Mes réalisations</h2>
-        <p>Projet universitaire — Bases de données relationnelles.</p>
+        <h2 data-i18n="dbPageSection">Mes réalisations</h2>
+        <p data-i18n="dbPageSectionIntro">
+          Projet universitaire — Bases de données relationnelles.
+        </p>
       </div>
 
       <article class="bi-project">
 
-        <h3>
+        <h3 data-i18n="dbProjectTitle">
           01 — SnowPeak : Gestion de stations de ski
         </h3>
 
-        <p>
+        <p data-i18n="dbProjectIntro1">
           Dans le cadre de mon Master, j'ai participé à la
           conception et à l'implémentation d'une base de données
           relationnelle pour SnowPeak, une entreprise fictive
           spécialisée dans la gestion de stations de ski.
         </p>
 
-        <p>
+        <p data-i18n="dbProjectIntro2">
           Réalisé en équipe, ce projet avait pour objectif de
           centraliser la gestion des clients, des équipements,
           des réservations, des cours de ski, des fournisseurs
           et des paiements.
-        </p>
-
-        <p>
-          Nous avons utilisé MySQL pour structurer les données
-          et développer des fonctionnalités avancées telles
-          que les vues, les déclencheurs et les procédures stockées.
         </p>
 
         <div class="tags">
@@ -167,12 +420,259 @@
           <span>Modélisation des données</span>
         </div>
 
+
+        <!-- 1. DICTIONNAIRE DES DONNÉES -->
+
+        <h4 class="bi-subtitle" data-i18n="dbDictionaryTitle">
+          Dictionnaire des données
+        </h4>
+
+        <p data-i18n="dbDictionaryIntro">
+          Le dictionnaire des données constitue une étape
+          essentielle de la conception. Il permet d'identifier
+          et de décrire les informations nécessaires au
+          fonctionnement de la base de données SnowPeak.
+        </p>
+
+        <!-- Aperçu illustratif à adapter au vrai dictionnaire -->
+
+        <div class="dictionary-preview">
+          <table>
+            <thead>
+              <tr>
+                <th>Entité</th>
+                <th>Rôle dans la base de données</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Client</td>
+                <td>Informations relatives aux clients</td>
+              </tr>
+              <tr>
+                <td>Station</td>
+                <td>Gestion des stations de ski</td>
+              </tr>
+              <tr>
+                <td>Équipement</td>
+                <td>Matériel proposé à la location</td>
+              </tr>
+              <tr>
+                <td>Réservation</td>
+                <td>Suivi des réservations</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Le lien sera activé après ajout du PDF -->
+
+        <span class="dictionary-link" data-i18n="dbDictionaryLink">
+          Voir le dictionnaire complet ↗
+        </span>
+
+
+        <!-- 2. MODÉLISATION -->
+
+        <h4 class="bi-subtitle" data-i18n="dbModelTitle">
+          Modélisation de la base de données
+        </h4>
+
+        <p data-i18n="dbModelIntro">
+          La conception de SnowPeak repose sur trois étapes
+          complémentaires : le modèle entité-association,
+          le modèle logique de données et le diagramme EER
+          généré avec MySQL.
+        </p>
+
+        <div class="schema-carousel">
+
+          <button
+            class="schema-arrow schema-prev"
+            type="button"
+            aria-label="Modèle précédent">
+            &#10094;
+          </button>
+
+          <div class="schema-viewport">
+            <div class="schema-track">
+
+              <!-- MODÈLE 1 : MEA -->
+
+              <div class="schema-slide">
+
+                <h4 data-i18n="dbModel1Title">
+                  Modèle 1 — Entité-association
+                </h4>
+
+                <div class="schema-image-area">
+                  <div class="schema-placeholder">
+                    <span>◇</span>
+                    Capture du modèle entité-association
+                    à ajouter
+                  </div>
+                </div>
+
+                <p class="schema-description"
+                   data-i18n="dbModel1Description">
+                  Identification des entités, de leurs attributs
+                  et des associations nécessaires à la
+                  représentation du fonctionnement de SnowPeak.
+                </p>
+
+              </div>
+
+
+              <!-- MODÈLE 2 : MLD -->
+
+              <div class="schema-slide">
+
+                <h4 data-i18n="dbModel2Title">
+                  Modèle 2 — Modèle logique de données
+                </h4>
+
+                <div class="schema-image-area">
+                  <div class="schema-placeholder">
+                    <span>▤</span>
+                    Capture du modèle logique
+                    à ajouter
+                  </div>
+                </div>
+
+                <p class="schema-description"
+                   data-i18n="dbModel2Description">
+                  Transformation du modèle entité-association
+                  en schéma relationnel, avec définition
+                  des tables et des clés primaires
+                  et étrangères.
+                </p>
+
+              </div>
+
+
+              <!-- MODÈLE 3 : EER -->
+
+              <div class="schema-slide">
+
+                <h4 data-i18n="dbModel3Title">
+                  Modèle 3 — Diagramme EER MySQL
+                </h4>
+
+                <div class="schema-image-area">
+                  <div class="schema-placeholder">
+                    <span>▦</span>
+                    Capture du diagramme EER
+                    à ajouter
+                  </div>
+                </div>
+
+                <p class="schema-description"
+                   data-i18n="dbModel3Description">
+                  Visualisation de la structure relationnelle
+                  implémentée dans MySQL et des liens
+                  entre les différentes tables.
+                </p>
+
+              </div>
+
+            </div>
+          </div>
+
+          <button
+            class="schema-arrow schema-next"
+            type="button"
+            aria-label="Modèle suivant">
+            &#10095;
+          </button>
+
+          <div class="schema-dots">
+            <button class="active" type="button"
+                    aria-label="Afficher le modèle 1"></button>
+            <button type="button"
+                    aria-label="Afficher le modèle 2"></button>
+            <button type="button"
+                    aria-label="Afficher le modèle 3"></button>
+          </div>
+
+          <p class="schema-hint" data-i18n="dbCarouselHint">
+            Faites glisser pour changer de modèle.
+          </p>
+
+        </div>
+
+
+        <!-- 3. IMPLÉMENTATION SQL -->
+
+        <h4 class="bi-subtitle" data-i18n="dbSqlTitle">
+          Implémentation SQL
+        </h4>
+
+        <p data-i18n="dbSqlIntro">
+          Après la phase de modélisation, la base de données
+          a été implémentée sous MySQL. Les scripts SQL
+          permettent de créer les tables, de définir les
+          contraintes d'intégrité et d'insérer des données
+          de test afin de vérifier le fonctionnement
+          de la base.
+        </p>
+
+
+        <!-- 4. FONCTIONNALITÉS AVANCÉES -->
+
+        <h4 class="bi-subtitle" data-i18n="dbAdvancedTitle">
+          Fonctionnalités SQL avancées
+        </h4>
+
+        <p data-i18n="dbAdvancedIntro">
+          Des fonctionnalités avancées ont été développées
+          pour faciliter l'exploitation des données
+          et automatiser certaines opérations.
+        </p>
+
+        <div class="sql-features">
+
+          <div class="sql-feature">
+            <h5 data-i18n="dbViewsTitle">Vues SQL</h5>
+            <p data-i18n="dbViewsText">
+              Création de vues pour faciliter
+              la consultation et l'analyse
+              des informations.
+            </p>
+          </div>
+
+          <div class="sql-feature">
+            <h5 data-i18n="dbTriggersTitle">
+              Déclencheurs (triggers)
+            </h5>
+            <p data-i18n="dbTriggersText">
+              Automatisation d'opérations
+              en réponse à des événements
+              sur les données.
+            </p>
+          </div>
+
+          <div class="sql-feature">
+            <h5 data-i18n="dbProceduresTitle">
+              Procédures stockées
+            </h5>
+            <p data-i18n="dbProceduresText">
+              Développement de traitements
+              SQL réutilisables pour gérer
+              certaines opérations métier.
+            </p>
+          </div>
+
+        </div>
+
       </article>
 
-      <!-- RETOUR VERS L'ACCUEIL -->
 
-      <div class="bi-bottom" style="text-align: center; margin-top: 45px;">
-        <a href="../#projets" class="btn btn-primary">
+      <!-- RETOUR AUX PROJETS -->
+
+      <div class="bi-bottom">
+        <a href="../#projets"
+           class="btn btn-primary"
+           data-i18n="biBack">
           ← Retour à mes projets
         </a>
       </div>
@@ -194,6 +694,64 @@
 
     </div>
   </footer>
+
+
+  <!-- JAVASCRIPT DU CARROUSEL -->
+
+  <script>
+    const carousel = document.querySelector(".schema-carousel");
+
+    if (carousel) {
+      const viewport = carousel.querySelector(".schema-viewport");
+      const track = carousel.querySelector(".schema-track");
+      const slides = carousel.querySelectorAll(".schema-slide");
+      const dots = carousel.querySelectorAll(".schema-dots button");
+
+      let currentSlide = 0;
+      let startX = 0;
+
+      function showSlide(index) {
+        currentSlide = (index + slides.length) % slides.length;
+
+        track.style.transform =
+          "translateX(-" + (currentSlide * 100) + "%)";
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === currentSlide);
+        });
+      }
+
+      carousel.querySelector(".schema-prev")
+        .addEventListener("click", () => {
+          showSlide(currentSlide - 1);
+        });
+
+      carousel.querySelector(".schema-next")
+        .addEventListener("click", () => {
+          showSlide(currentSlide + 1);
+        });
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          showSlide(i);
+        });
+      });
+
+      viewport.addEventListener("pointerdown", (event) => {
+        startX = event.clientX;
+      });
+
+      viewport.addEventListener("pointerup", (event) => {
+        const distance = event.clientX - startX;
+
+        if (Math.abs(distance) > 50) {
+          showSlide(currentSlide + (distance < 0 ? 1 : -1));
+        }
+      });
+
+      showSlide(0);
+    }
+  </script>
 
 </body>
 </html>
