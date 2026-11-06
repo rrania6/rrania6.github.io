@@ -105,26 +105,13 @@
       border-bottom: none;
     }
 
- 
-.dictionary-link {
-  display: list-item;
-  width: fit-content;
-  color: #94a3b8;
-  font-size: 12px;
-  text-decoration: none;
-  margin-top: 5px;
-  cursor: pointer;
-  list-style: none;
-}
-
-.dictionary-link::-webkit-details-marker {
-  display: none;
-}
-
-.dictionary-details[open] .dictionary-link {
-  margin-bottom: 15px;
-}
-
+    .dictionary-link {
+      display: inline-block;
+      color: #94a3b8;
+      font-size: 12px;
+      text-decoration: none;
+      margin-top: 5px;
+    }
 
     a.dictionary-link:hover {
       color: #0755bb;
@@ -339,6 +326,99 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* DICTIONNAIRE : ouverture grand format et zoom */
+    .dictionary-link {
+      display: inline-block;
+      border: 0;
+      background: transparent;
+      padding: 0;
+      color: #94a3b8;
+      font: inherit;
+      font-size: 12px;
+      cursor: pointer;
+      margin-top: 5px;
+      text-align: left;
+    }
+    .dictionary-link:hover { color: #0755bb; text-decoration: underline; }
+    .dictionary-dialog {
+      position: fixed;
+      inset: 0;
+      width: min(96vw, 1500px);
+      height: min(94vh, 1000px);
+      max-width: none;
+      max-height: none;
+      margin: auto;
+      padding: 0;
+      border: 1px solid #dbe4f0;
+      border-radius: 16px;
+      background: white;
+      color: #1f2937;
+      box-shadow: 0 20px 80px rgba(15,23,42,.25);
+      overflow: hidden;
+    }
+    .dictionary-dialog::backdrop { background: rgba(15,23,42,.72); }
+    .dictionary-dialog[open] { display: flex; flex-direction: column; }
+    .dictionary-dialog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 18px 24px;
+      border-bottom: 1px solid #e7eaf0;
+      background: #fff;
+    }
+    .dictionary-dialog-header h2 { font-size: 20px; margin: 0 0 5px; }
+    .dictionary-dialog-header p { font-size: 12px; margin: 0; color: #64748b; }
+    .dictionary-controls { display: flex; gap: 9px; align-items: center; }
+    .dictionary-controls button {
+      background: #f8fafc;
+      border: 1px solid #dbe4f0;
+      border-radius: 8px;
+      min-width: 36px;
+      height: 36px;
+      cursor: pointer;
+      color: #1f2937;
+      font-size: 17px;
+    }
+    .dictionary-controls button:hover { background: #eaf2ff; }
+    .dictionary-controls span { min-width: 48px; text-align: center; font-size: 12px; }
+    .dictionary-controls .dictionary-close { margin-left: 6px; }
+    .dictionary-scroll { overflow: auto; flex: 1; min-height: 0; }
+    .dictionary-zoom-area { width: max-content; min-width: 100%; zoom: 1; }
+    .dictionary-full-table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 1050px;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .dictionary-full-table th,
+    .dictionary-full-table td {
+      padding: 11px 13px;
+      border: 1px solid #dce5ef;
+      text-align: left;
+      vertical-align: top;
+      overflow-wrap: anywhere;
+    }
+    .dictionary-full-table th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #dceaf7;
+      color: #17375e;
+      white-space: nowrap;
+    }
+    .dictionary-full-table td:first-child { font-weight: 700; color: #17375e; }
+    .dictionary-full-table tbody tr:nth-child(even) { background: #f8fafc; }
+    .dictionary-full-table td:nth-child(2) { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    @media (max-width: 600px) {
+      .dictionary-dialog { width: 100vw; height: 100dvh; border-radius: 0; }
+      .dictionary-dialog-header { padding: 12px; }
+      .dictionary-dialog-header h2 { font-size: 16px; }
+      .dictionary-full-table { min-width: 900px; }
+    }
   </style>
 </head>
 
@@ -435,170 +515,129 @@
 
 
         <!-- 1. DICTIONNAIRE DES DONNÉES -->
-
-        <h4 class="bi-subtitle" data-i18n="dbDictionaryTitle">
-          Dictionnaire des données
-        </h4>
-
+        <h4 class="bi-subtitle" data-i18n="dbDictionaryTitle">Dictionnaire des données</h4>
         <p data-i18n="dbDictionaryIntro">
-          Le dictionnaire des données constitue une étape
-          essentielle de la conception. Il permet d'identifier
-          et de décrire les informations nécessaires au
-          fonctionnement de la base de données SnowPeak.
+          Le dictionnaire des données décrit les attributs, les types et les contraintes
+          des 14 tables de la base SnowPeak.
         </p>
 
-        <!-- Aperçu illustratif à adapter au vrai dictionnaire -->
+        <div class="dictionary-preview">
+          <table>
+            <thead><tr><th>Entité</th><th>Attribut</th><th>Type</th><th>Contrainte</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td>STATION</td><td>id_station</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique de la station</td></tr>
+              <tr><td>STATION</td><td>nom_station</td><td>VARCHAR(100)</td><td>NOT NULL</td><td>Nom de la station (ex. : Les Arcs)</td></tr>
+              <tr><td>STATION</td><td>lieu</td><td>VARCHAR(150)</td><td>NOT NULL</td><td>Localisation géographique</td></tr>
+              <tr><td>EQUIPEMENT</td><td>id_equipement</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique de l’équipement</td></tr>
+              <tr><td>EQUIPEMENT</td><td>type_equipement</td><td>VARCHAR(50)</td><td>NOT NULL</td><td>Type de matériel</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <button type="button" class="dictionary-link" id="open-dictionary">
+          Voir le dictionnaire complet ↗
+        </button>
 
-<div class="dictionary-preview">
-  <table>
-    <thead>
-      <tr>
-        <th>Entité</th>
-        <th>Attribut</th>
-        <th>Type</th>
-        <th>Contrainte</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr>
-        <td>STATION</td>
-        <td>id_station</td>
-        <td>INT</td>
-        <td>PK, NOT NULL, AUTO_INCREMENT</td>
-        <td>Identifiant unique de la station</td>
-      </tr>
-
-      <tr>
-        <td>STATION</td>
-        <td>nom_station</td>
-        <td>VARCHAR(100)</td>
-        <td>NOT NULL</td>
-        <td>Nom de la station</td>
-      </tr>
-
-      <tr>
-        <td>STATION</td>
-        <td>lieu</td>
-        <td>VARCHAR(150)</td>
-        <td>NOT NULL</td>
-        <td>Localisation géographique</td>
-      </tr>
-
-      <tr>
-        <td>EQUIPEMENT</td>
-        <td>id_equipement</td>
-        <td>INT</td>
-        <td>PK, NOT NULL, AUTO_INCREMENT</td>
-        <td>Identifiant unique de l'équipement</td>
-      </tr>
-
-      <tr>
-        <td>EQUIPEMENT</td>
-        <td>type_equipement</td>
-        <td>VARCHAR(50)</td>
-        <td>NOT NULL</td>
-        <td>Type de matériel</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<details class="dictionary-details">
-  <summary class="dictionary-link">
-    Voir le dictionnaire complet ↓
-  </summary>
-
-
-<div class="dictionary-preview">
-  <table>
-    <thead>
-      <tr>
-        <th>Entité</th>
-        <th>Attribut</th>
-        <th>Type</th>
-        <th>Contrainte</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr>
-        <td>CLIENT</td>
-        <td>id_client</td>
-        <td>INT</td>
-        <td>PK, AUTO_INCREMENT</td>
-        <td>Identifiant du client</td>
-      </tr>
-
-      <tr>
-        <td>CLIENT</td>
-        <td>nom_client</td>
-        <td>VARCHAR(32)</td>
-        <td>NOT NULL</td>
-        <td>Nom du client</td>
-      </tr>
-
-      <tr>
-        <td>CLIENT</td>
-        <td>email_client</td>
-        <td>VARCHAR(50)</td>
-        <td>NOT NULL, UNIQUE</td>
-        <td>Adresse e-mail du client</td>
-      </tr>
-
-      <tr>
-        <td>EQUIPEMENT</td>
-        <td>taille</td>
-        <td>VARCHAR(20)</td>
-        <td>NOT NULL</td>
-        <td>Taille de l'équipement</td>
-      </tr>
-
-      <tr>
-        <td>EQUIPEMENT</td>
-        <td>disponibilite</td>
-        <td>BOOLEAN</td>
-        <td>NOT NULL</td>
-        <td>Disponibilité du matériel</td>
-      </tr>
-
-      <tr>
-        <td>EQUIPEMENT</td>
-        <td>prix_jour_base</td>
-        <td>DECIMAL(10,2)</td>
-        <td>NOT NULL</td>
-        <td>Prix journalier de base</td>
-      </tr>
-
-      <tr>
-        <td>RESERVATION</td>
-        <td>id_reservation</td>
-        <td>INT</td>
-        <td>PK, AUTO_INCREMENT</td>
-        <td>Identifiant de la réservation</td>
-      </tr>
-
-      <tr>
-        <td>RESERVATION</td>
-        <td>date_debut</td>
-        <td>DATE</td>
-        <td>NOT NULL</td>
-        <td>Date de début</td>
-      </tr>
-
-      <tr>
-        <td>RESERVATION</td>
-        <td>date_fin</td>
-        <td>DATE</td>
-        <td>NOT NULL, CHECK</td>
-        <td>Date de fin, après la date de début</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-</details>
+        <!-- Fenêtre grand format : dictionnaire intégral -->
+        <dialog id="dictionary-dialog" class="dictionary-dialog" aria-labelledby="dictionary-title">
+          <div class="dictionary-dialog-header">
+            <div>
+              <h2 id="dictionary-title">Dictionnaire des données — SnowPeak</h2>
+              <p>14 tables · 77 attributs · Rapport SnowPeak, pages 2 à 6</p>
+            </div>
+            <div class="dictionary-controls">
+              <button type="button" id="dictionary-minus" aria-label="Réduire le zoom">−</button>
+              <span id="dictionary-zoom-label">100 %</span>
+              <button type="button" id="dictionary-plus" aria-label="Augmenter le zoom">+</button>
+              <button type="button" id="dictionary-close" class="dictionary-close" aria-label="Fermer le dictionnaire">✕</button>
+            </div>
+          </div>
+          <div class="dictionary-scroll">
+            <div class="dictionary-zoom-area" id="dictionary-zoom-area">
+              <table class="dictionary-full-table">
+                <thead><tr><th>Entité</th><th>Attribut</th><th>Type</th><th>Contrainte</th><th>Description</th></tr></thead>
+                <tbody>
+              <tr><td>STATION</td><td>id_station</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique de la station</td></tr>
+              <tr><td></td><td>nom_station</td><td>VARCHAR(100)</td><td>NOT NULL</td><td>Nom de la station (ex. : Les Arcs)</td></tr>
+              <tr><td></td><td>lieu</td><td>VARCHAR(150)</td><td>NOT NULL</td><td>Localisation géographique</td></tr>
+              <tr><td>EQUIPEMENT</td><td>id_equipement</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique de l’équipement</td></tr>
+              <tr><td></td><td>type_equipement</td><td>VARCHAR(50)</td><td>NOT NULL</td><td>Type de matériel</td></tr>
+              <tr><td></td><td>taille</td><td>VARCHAR(20)</td><td>NOT NULL</td><td>Taille de l’équipement (ex. : 160 cm, Enfant, Unique)</td></tr>
+              <tr><td></td><td>etat</td><td>ENUM(&#x27;Neuf&#x27;, &#x27;Bon état&#x27;, &#x27;Usagé&#x27;, &#x27;En réparation&#x27;)</td><td>NOT NULL, DEFAULT &#x27;Neuf&#x27;</td><td>État de l’équipement</td></tr>
+              <tr><td></td><td>niveau_requis</td><td>ENUM(&#x27;Débutant&#x27;, &#x27;Intermédiaire&#x27;, &#x27;Expert&#x27;)</td><td>NOT NULL</td><td>Niveau requis</td></tr>
+              <tr><td></td><td>disponibilite</td><td>BOOLEAN</td><td>NOT NULL</td><td>1 : disponible ; 0 : loué</td></tr>
+              <tr><td></td><td>prix_jour_base</td><td>DECIMAL(10,2)</td><td>NOT NULL</td><td>Tarif journalier de base</td></tr>
+              <tr><td></td><td>id_station</td><td>INT</td><td>FK, NOT NULL</td><td>Station où se trouve le stock</td></tr>
+              <tr><td>CLIENT</td><td>id_client</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique du client</td></tr>
+              <tr><td></td><td>nom_client</td><td>VARCHAR(32)</td><td>NOT NULL</td><td>Nom de famille du client</td></tr>
+              <tr><td></td><td>prenom_client</td><td>VARCHAR(32)</td><td>NOT NULL</td><td>Prénom du client</td></tr>
+              <tr><td></td><td>date_naissance_client</td><td>DATE</td><td>NOT NULL</td><td>Date de naissance du client (calcul du tarif selon l’âge)</td></tr>
+              <tr><td></td><td>telephone_client</td><td>VARCHAR(20)</td><td>NOT NULL</td><td>Numéro de téléphone du client</td></tr>
+              <tr><td></td><td>email_client</td><td>VARCHAR(50)</td><td>NOT NULL, UNIQUE</td><td>Adresse e-mail du client</td></tr>
+              <tr><td>COURS</td><td>id_cours</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique du cours</td></tr>
+              <tr><td></td><td>libelle</td><td>VARCHAR(150)</td><td>NOT NULL</td><td>Nom du cours (ex. : Initiation ski alpin)</td></tr>
+              <tr><td></td><td>niveau_cours</td><td>ENUM(&#x27;Débutant&#x27;, &#x27;Intermédiaire&#x27;, &#x27;Expert&#x27;)</td><td>NOT NULL</td><td>Niveau du cours</td></tr>
+              <tr><td></td><td>tarif_cours</td><td>DECIMAL(10,2)</td><td>NOT NULL, CHECK &gt; 0</td><td>Prix du cours en euros</td></tr>
+              <tr><td></td><td>duree</td><td>INT</td><td>NOT NULL</td><td>Durée du cours en heures</td></tr>
+              <tr><td></td><td>capacite_max</td><td>INT</td><td>NOT NULL</td><td>Nombre maximum de participants</td></tr>
+              <tr><td></td><td>id_station</td><td>INT</td><td>FK, NOT NULL</td><td>Station qui propose le cours</td></tr>
+              <tr><td></td><td>id_employe</td><td>INT</td><td>FK, NOT NULL</td><td>Employé qui encadre le cours</td></tr>
+              <tr><td>EMPLOYE</td><td>id_employe</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique de l’employé</td></tr>
+              <tr><td></td><td>nom_employe</td><td>VARCHAR(32)</td><td>NOT NULL</td><td>Nom de famille de l’employé</td></tr>
+              <tr><td></td><td>prenom_employe</td><td>VARCHAR(32)</td><td>NOT NULL</td><td>Prénom de l’employé</td></tr>
+              <tr><td></td><td>role_employe</td><td>ENUM(&#x27;Moniteur&#x27;, &#x27;Technicien&#x27;, &#x27;Administratif&#x27;)</td><td>NOT NULL</td><td>Rôle de l’employé</td></tr>
+              <tr><td></td><td>email_employe</td><td>VARCHAR(50)</td><td>NOT NULL</td><td>Adresse e-mail de l’employé</td></tr>
+              <tr><td></td><td>telephone_employe</td><td>VARCHAR(20)</td><td>NOT NULL</td><td>Numéro de téléphone de l’employé</td></tr>
+              <tr><td></td><td>id_station</td><td>INT</td><td>FK, NOT NULL</td><td>Station où travaille l’employé</td></tr>
+              <tr><td>HORAIRE</td><td>id_horaire</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique de l’horaire</td></tr>
+              <tr><td></td><td>jour</td><td>ENUM(&#x27;Lundi&#x27;, &#x27;Mardi&#x27;, &#x27;Mercredi&#x27;, &#x27;Jeudi&#x27;, &#x27;Vendredi&#x27;, &#x27;Samedi&#x27;, &#x27;Dimanche&#x27;)</td><td>NOT NULL</td><td>Jour de travail de l’employé</td></tr>
+              <tr><td></td><td>heure_debut</td><td>TIME</td><td>NOT NULL</td><td>Heure de début de travail</td></tr>
+              <tr><td></td><td>heure_fin</td><td>TIME</td><td>NOT NULL</td><td>Heure de fin de travail</td></tr>
+              <tr><td></td><td>id_employe</td><td>INT</td><td>FK, NOT NULL</td><td>Employé concerné par l’horaire de travail</td></tr>
+              <tr><td>FOURNISSEUR</td><td>id_fournisseur</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique du fournisseur</td></tr>
+              <tr><td></td><td>nom_fournisseur</td><td>VARCHAR(32)</td><td>NOT NULL</td><td>Nom du fournisseur</td></tr>
+              <tr><td></td><td>type_service</td><td>ENUM(&#x27;Maintenance équipements&#x27;, &#x27;Assurance/Assistance&#x27;)</td><td>NOT NULL</td><td>Type de service proposé par le fournisseur</td></tr>
+              <tr><td></td><td>email_fournisseur</td><td>VARCHAR(50)</td><td>NOT NULL</td><td>Adresse e-mail du fournisseur</td></tr>
+              <tr><td></td><td>telephone_fournisseur</td><td>VARCHAR(20)</td><td>NOT NULL</td><td>Numéro de téléphone du fournisseur</td></tr>
+              <tr><td>RESERVATION</td><td>id_reservation</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique de la réservation</td></tr>
+              <tr><td></td><td>date_debut</td><td>DATE</td><td>NOT NULL</td><td>Date de début de la réservation</td></tr>
+              <tr><td></td><td>date_fin</td><td>DATE</td><td>NOT NULL, CHECK &gt; date_debut</td><td>Date de fin de la réservation</td></tr>
+              <tr><td></td><td>statut</td><td>ENUM(&#x27;En cours&#x27;, &#x27;Terminée&#x27;, &#x27;Annulée&#x27;)</td><td>NOT NULL, DEFAULT &#x27;En cours&#x27;</td><td>Statut de la réservation</td></tr>
+              <tr><td></td><td>id_client</td><td>INT</td><td>FK, NOT NULL</td><td>Client ayant effectué la réservation</td></tr>
+              <tr><td></td><td>id_station</td><td>INT</td><td>FK, NOT NULL</td><td>Station de la réservation</td></tr>
+              <tr><td>FACTURE_CLIENT</td><td>id_facture_client</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique de la facture client</td></tr>
+              <tr><td></td><td>montant_total</td><td>DECIMAL(10,2)</td><td>NOT NULL, CHECK &gt; 0</td><td>Montant total TTC en euros</td></tr>
+              <tr><td></td><td>date_emission</td><td>DATETIME</td><td>NOT NULL</td><td>Date et heure d’émission de la facture</td></tr>
+              <tr><td></td><td>statut</td><td>BOOLEAN</td><td>NOT NULL, DEFAULT 0</td><td>Statut de paiement (1 : payée ; 0 : non)</td></tr>
+              <tr><td></td><td>mode_paiement</td><td>ENUM(&#x27;Carte bancaire&#x27;, &#x27;Espèces&#x27;, &#x27;Virement&#x27;, &#x27;Chèque&#x27;)</td><td>NOT NULL</td><td>Mode de paiement</td></tr>
+              <tr><td></td><td>id_reservation</td><td>INT</td><td>FK</td><td>Réservation associée à la facture</td></tr>
+              <tr><td>FACTURE_FOURNISSEUR</td><td>id_facture_fournisseur</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique de la facture fournisseur</td></tr>
+              <tr><td></td><td>montant_total</td><td>DECIMAL(10,2)</td><td>NOT NULL, CHECK &gt; 0</td><td>Montant total TTC en euros</td></tr>
+              <tr><td></td><td>date_emission</td><td>DATETIME</td><td>NOT NULL</td><td>Date et heure d’émission de la facture</td></tr>
+              <tr><td></td><td>statut</td><td>BOOLEAN</td><td>NOT NULL, DEFAULT 0</td><td>Statut de paiement (1 : payée ; 0 : non)</td></tr>
+              <tr><td></td><td>mode_paiement</td><td>ENUM(&#x27;Virement&#x27;, &#x27;Chèque&#x27;)</td><td>NOT NULL</td><td>Mode de paiement</td></tr>
+              <tr><td></td><td>id_fournisseur</td><td>INT</td><td>FK</td><td>Fournisseur ayant émis la facture</td></tr>
+              <tr><td></td><td>id_station</td><td>INT</td><td>FK</td><td>Station concernée par la facture</td></tr>
+              <tr><td>SERVICE</td><td>id_service</td><td>INT</td><td>PK, NOT NULL, AUTO_INCREMENT</td><td>Identifiant unique du service</td></tr>
+              <tr><td></td><td>type_service</td><td>ENUM(&#x27;Assurance Neige&#x27;, &#x27;Assistance Piste&#x27;)</td><td>NOT NULL</td><td>Type de service proposé par la station</td></tr>
+              <tr><td></td><td>prix_service</td><td>DECIMAL(10,2)</td><td>NOT NULL, CHECK &gt; 0</td><td>Prix du service en euros</td></tr>
+              <tr><td>SOUSCRIPTION_SERVICE</td><td>id_reservation</td><td>INT</td><td>FK, NOT NULL (PK composée)</td><td>Clé étrangère vers RESERVATION (PK composée)</td></tr>
+              <tr><td></td><td>id_service</td><td>INT</td><td>FK, NOT NULL (PK composée)</td><td>Clé étrangère vers SERVICE (PK composée)</td></tr>
+              <tr><td></td><td>date_souscription</td><td>DATE</td><td>NOT NULL</td><td>Date de souscription au service</td></tr>
+              <tr><td></td><td>montant</td><td>DECIMAL(10,2)</td><td>NOT NULL</td><td>Montant total payé pour le service en euros</td></tr>
+              <tr><td>INSCRIPTION_COURS</td><td>id_reservation</td><td>INT</td><td>FK, NOT NULL (PK composée)</td><td>Clé étrangère vers RESERVATION (PK composée)</td></tr>
+              <tr><td></td><td>id_cours</td><td>INT</td><td>FK, NOT NULL (PK composée)</td><td>Clé étrangère vers COURS (PK composée)</td></tr>
+              <tr><td></td><td>nb_participants</td><td>INT</td><td>NOT NULL, CHECK &gt; 0</td><td>Nombre de participants au cours</td></tr>
+              <tr><td></td><td>statut_inscription</td><td>ENUM(&#x27;Confirmé&#x27;, &#x27;En attente&#x27;, &#x27;Annulé&#x27;)</td><td>NOT NULL</td><td>Statut de l’inscription</td></tr>
+              <tr><td>LOCATION_EQUIPEMENT</td><td>id_reservation</td><td>INT</td><td>FK, NOT NULL (PK composée)</td><td>Clé étrangère vers RESERVATION (PK composée)</td></tr>
+              <tr><td></td><td>id_equipement</td><td>INT</td><td>FK, NOT NULL (PK composée)</td><td>Clé étrangère vers EQUIPEMENT (PK composée)</td></tr>
+              <tr><td></td><td>date_debut_location</td><td>DATE</td><td>NOT NULL</td><td>Date de début de la location</td></tr>
+              <tr><td></td><td>date_fin_location</td><td>DATE</td><td>NOT NULL</td><td>Date de fin de la location</td></tr>
+              <tr><td></td><td>prix_applique</td><td>DECIMAL(10,2)</td><td>NOT NULL</td><td>Prix facturé au moment de la location</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </dialog>
 
         <!-- 2. MODÉLISATION -->
 
@@ -881,5 +920,32 @@
     }
   </script>
 
+
+  <script>
+    // Dictionnaire intégral : ouverture, fermeture et zoom.
+    (() => {
+      const dialog = document.getElementById('dictionary-dialog');
+      const area = document.getElementById('dictionary-zoom-area');
+      const label = document.getElementById('dictionary-zoom-label');
+      let zoom = 100;
+      const updateZoom = () => {
+        area.style.zoom = String(zoom / 100);
+        label.textContent = zoom + ' %';
+      };
+      document.getElementById('open-dictionary').addEventListener('click', () => dialog.showModal());
+      document.getElementById('dictionary-close').addEventListener('click', () => dialog.close());
+      document.getElementById('dictionary-plus').addEventListener('click', () => {
+        zoom = Math.min(180, zoom + 20); updateZoom();
+      });
+      document.getElementById('dictionary-minus').addEventListener('click', () => {
+        zoom = Math.max(60, zoom - 20); updateZoom();
+      });
+      dialog.addEventListener('click', event => {
+        if (event.target === dialog) dialog.close();
+      });
+    })();
+  </script>
+
 </body>
 </html>
+
